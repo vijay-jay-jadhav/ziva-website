@@ -330,3 +330,6 @@ footer .wrap,.contact .wrap{color:inherit}
   *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   html{scroll-behavior:auto}
 }
+/* dark mode: soften the paint swipe so light text stays readable on it */
+:root[data-theme="dark"] .m-paint::before{background:color-mix(in srgb,var(--cad) 42%,var(--paper))}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .m-paint::before{background:color-mix(in srgb,var(--cad) 42%,var(--paper))}}
