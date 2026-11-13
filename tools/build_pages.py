@@ -39,7 +39,7 @@ def nav(cur):
     <ul class="links" id="links">
       <li><a href="index.html">Home</a></li>
       <li class="dd"><button aria-haspopup="true">Work ▾</button><div class="dd-menu">{items}</div></li>
-      <li class="dd"><button aria-haspopup="true">Divisions ▾</button><div class="dd-menu"><a href="index.html#design-lab"><span class="dot" style="background:var(--ultra)"></span>Design Lab</a><a href="filmmaking.html"><span class="dot" style="background:var(--rose)"></span>Filmmaking</a><a href="index.html#arts-studio"><span class="dot" style="background:var(--cad)"></span>Arts Studio</a></div></li>
+      <li class="dd"><button aria-haspopup="true">Divisions ▾</button><div class="dd-menu"><a href="design-lab.html"><span class="dot" style="background:var(--ultra)"></span>Design Lab</a><a href="filmmaking.html"><span class="dot" style="background:var(--rose)"></span>Filmmaking</a><a href="arts-studio.html"><span class="dot" style="background:var(--cad)"></span>Arts Studio</a></div></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
@@ -50,7 +50,7 @@ def nav(cur):
 FOOT = '''<footer>
   <div class="wrap">
     <div class="foot-top">
-      <nav aria-label="Footer"><a href="index.html">Home</a><a href="filmmaking.html">Filmmaking</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="index.html#contact">Contact</a></nav>
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="design-lab.html">Design Lab</a><a href="filmmaking.html">Filmmaking</a><a href="arts-studio.html">Arts Studio</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="index.html#contact">Contact</a></nav>
       <span class="hand" style="font-size:1.1rem;color:#C9CBCF">Made by hand in Pune</span>
     </div>
     <span class="foot-plate"><img class="foot-logo" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></span>
@@ -127,7 +127,7 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 <section class="page-hero">
   <div class="wrap">
     <div>
-      <p class="crumbs mono">{'<a href="filmmaking.html">Filmmaking</a>' if slug == 'photography' else '<a href="index.html#arts-studio">Arts Studio</a>'}<span>/</span><span>{e(label)}</span></p>
+      <p class="crumbs mono">{'<a href="filmmaking.html">Filmmaking</a>' if slug == 'photography' else '<a href="arts-studio.html">Arts Studio</a>'}<span>/</span><span>{e(label)}</span></p>
       <h1>{e(h1.rsplit(" ",1)[0]+" ") if " " in h1 else ""}<span class="mark m-paint" style="{hl.lstrip(";")}">{e(h1.rsplit(" ",1)[-1])}</span></h1>
       <p class="lede">{e(lede)}</p>
     </div>
@@ -249,3 +249,121 @@ fp = fp.replace('</footer>', '</footer>\n' + VM, 1)
 fp = fp.replace('aria-current="page"', '')
 (ROOT / 'filmmaking.html').write_text(fp, encoding='utf-8')
 print('filmmaking', len(fp))
+
+# ---------------- Design Lab and Arts Studio division pages ----------------
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">')
+def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Start a project'):
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{e(title)} · Ziva Studios</title>
+<meta name="description" content="{e(desc)}">
+<meta property="og:title" content="{e(title)} · Ziva Studios"><meta property="og:image" content="{og}">
+{FONTS}
+<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/gallery.css">
+</head>
+<body>
+{nav('')}
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <p class="crumbs mono"><a href="index.html#divisions">Divisions</a><span>/</span><span>{e(crumb)}</span></p>
+      <h1><span class="mark m-paint" style="{hl}">{e(h1)}</span></h1>
+      <p class="lede">{e(lede)}</p>
+    </div>
+    <p class="note">{e(note)}</p>
+  </div>
+</section>
+{body}
+<section class="cta-band">
+  <div class="wrap">
+    <div><h2>Have something in mind?</h2><div class="other-pages"><a href="design-lab.html">Design Lab</a><a href="filmmaking.html">Filmmaking</a><a href="arts-studio.html">Arts Studio</a></div></div>
+    <a class="btn" href="index.html#contact">{cta}</a>
+  </div>
+</section>
+</main>
+{FOOT}
+{LB}
+<script>window.ZIVA={json.dumps(data, ensure_ascii=False, separators=(',', ':'))};</script>
+<script src="assets/gallery.js"></script>
+</body>
+</html>
+'''
+def figs(setname, items, cls='', cap=True, sizes='(max-width:700px) 46vw, 300px'):
+    return ''.join(f'<figure class="g-item {cls}" data-set="{setname}" data-i="{i}" tabindex="0" role="button" aria-label="Open {e(x["title"])}">'
+                   f'<img src="{x["sm"]}" srcset="{x["sm"]} 800w, {x["lg"]} 2400w" sizes="{sizes}" width="{x["w"]}" height="{x["h"]}" alt="{e(x["title"])}" loading="lazy" decoding="async">'
+                   + (f'<figcaption>{e(x["title"])}</figcaption>' if cap else '') + '</figure>' for i, x in enumerate(items))
+def tag(name, role, c, fg):
+    return f'<div class="tag" style="--c:var({c});--fgc:{fg}"><header><b>HELLO</b><small>my name is</small></header><div class="nm">{name}</div><p class="rl">{role}</p></div>'
+def chips(*xs): return '<div class="chips-row">' + ''.join(f'<span>{x}</span>' for x in xs) + '</div>'
+
+# Design Lab
+DV, MP, SV, LR = G['design-dataviz'], G['design-maps'], G['design-saheb'], G['design-letsread']
+vids = [('media/maps/20.mp4', 'Mean maximum temperatures, 1970-2020'), ('media/maps/21.mp4', "India's export connections, 2022-23"),
+        ('media/maps/22.mp4', 'Earthquakes of magnitude 5.5+, 2000-2020')]
+dl_body = f'''<div class="wrap">
+  {chips('Brand identity', 'Graphics &amp; social', 'Data visualisation', 'Infographics', 'Reports &amp; publications')}
+  <div class="section-label" style="margin-top:0"><h2>Data visualisation</h2><span class="hand">{len(DV)} charts, each from a public dataset</span></div>
+  <div class="pinboard">{figs('dv', DV)}</div>
+  <div class="section-label"><h2>Maps</h2><span class="hand">QGIS, Python, Flourish and Datawrapper</span></div>
+  <div class="mapgrid">{figs('mp', MP, sizes='(max-width:700px) 46vw, 260px')}
+    {''.join(f'<figure class="vid"><video src="{v}" autoplay muted loop playsinline preload="metadata"></video><figcaption>{e(t)}</figcaption></figure>' for v, t in vids)}</div>
+  <div class="section-label"><h2>Graphics &amp; social: Saheb Vishesh</h2><span class="hand">A 79-day Marathi post series. Drag or scroll →</span></div>
+  <div class="strip deck">{figs('sv', SV, cap=False, sizes='340px')}</div>
+  <div class="case">
+    <div><span class="mono">Client</span><h2>Lets Read Foundation</h2><p>Infographics on India's public libraries, made in English and Marathi for the foundation's social channels.</p></div>
+    <div class="case-imgs">{figs('lr', LR, cap=False, sizes='(max-width:700px) 46vw, 260px')}</div>
+  </div>
+  <div class="section-label"><h2>The lab team</h2></div>
+  <div class="team crew">{tag('Manoj Janwekar', 'Editor, graphic designer & motion graphics', '--ultra', 'var(--on-ultra)')}{tag('Samruddhi Kadolkar', 'Graphic designer, illustrator & visual storyteller', '--sap', '#FBFBF8')}{tag('Vijay Jadhav', 'Data visualisation & infographics', '--ultra', 'var(--on-ultra)')}</div>
+</div>'''
+(ROOT / 'design-lab.html').write_text(shell('design-lab', 'Design Lab', 'Brand identity, graphics, data visualisation, maps and infographics from Ziva Studios, Pune.',
+    DV[3]['lg'], 'Design Lab', 'Design Lab', '--cad:var(--ultra);color:var(--on-ultra)',
+    'Identity, graphics and data turned into something people can read at a glance. Charts, maps and social series, made from real data and checked twice.',
+    'Every chart here started as a spreadsheet.', dl_body, {'items': [], 'dv': DV, 'mp': MP, 'sv': SV, 'lr': LR}), encoding='utf-8')
+
+# Arts Studio
+def pick(page, frag): return next(x for x in G[page] if frag in x['sm'])
+tiles = [('paintings', 'Paintings', 'dsc00057'), ('sculptures', 'Sculptures', 'img-9316'), ('murals', 'Murals', 'img-0570'),
+         ('miniature-statues', 'Miniature Statues', 'gb-3801'), ('miniature-models', 'Miniature Models', 'img-5573')]
+tile_html = ''.join(f'<a class="atile" href="{s}.html"><img src="{pick(s, f)["sm"]}" srcset="{pick(s, f)["sm"]} 800w, {pick(s, f)["lg"]} 2400w" sizes="(max-width:700px) 92vw, 40vw" alt="" loading="lazy">'
+                    f'<span><b>{t}</b><i class="mono">{len(G[s])} works →</i></span></a>' for s, t, f in tiles)
+mats = [('100% linen canvas', 'Stretched over custom hardwood bars, the same cloth the old masters painted on.', pick('paintings-process', 'img-9579')),
+        ('Old Master oil pigments', 'Handmade oils with the highest pigment load, so the colour stays true for centuries.', pick('paintings', 'modern-2')),
+        ('Museum-grade glass & framing', 'Toughened glass and archival framing that shield the work from damp, dust and light.', pick('paintings', 'dsc00057')),
+        ('Basalt stone', 'Sculpture in Deccan basalt, the stone of Maharashtra’s own forts and temples.', pick('sculptures', 'img-9993'))]
+mat_html = ''.join(f'<figure class="mat-card"><img src="{x["sm"]}" alt="" loading="lazy"><figcaption><b>{t}</b><span>{d}</span></figcaption></figure>' for t, d, x in mats)
+steps = [('Awareness', 'You see what we have made over the past decades, in halls, homes and public places.', pick('paintings', 'dsc00054')),
+         ('Interest', 'We sit with you to understand the person, the place and the story the work should carry.', pick('paintings', 'makrand-dave')),
+         ('Decision', 'Sketches, materials and a clear quotation. Work starts only when you approve.', pick('sculptures', '7135a56b')),
+         ('Production', 'The master artist and assistants build it by hand, in oil, clay or stone.', pick('paintings-process', '174509')),
+         ('Delivery & installation', 'Packed with care, delivered and installed by our own team.', pick('paintings', 'pan03584'))]
+step_html = ''.join(f'<li><figure><img src="{x["sm"]}" alt="" loading="lazy"></figure><div><span class="mono">Step {i + 1}</span><h3>{t}</h3><p>{d}</p></div></li>' for i, (t, d, x) in enumerate(steps))
+as_body = f'''<div class="wrap">
+  {chips('Paintings', 'Murals', 'Sculptures', 'Miniature gifting', 'Scale models')}
+  <div class="atiles">{tile_html}</div>
+  <blockquote class="vision"><p>We create heirloom-grade paintings and sculpture, meticulously crafted to survive centuries, so a family’s legacy is not just remembered but physically present.</p>
+    <p class="mono cite">Vision · Arts Studio</p></blockquote>
+  <div class="ethos"><div><span class="mono">We do not mass-produce</span><p>We curate, consult and craft. Each piece is designed to stand the test of time, 500 years and beyond, with materials and techniques once reserved for royal portraits and temple masterpieces.</p></div></div>
+  <div class="section-label"><h2>What makes our art last</h2><span class="hand">Four materials, no shortcuts</span></div>
+  <div class="mats">{mat_html}</div>
+  <div class="section-label"><h2>How a commission works</h2><span class="hand">Five steps, from first look to final wall</span></div>
+  <ol class="journey">{step_html}</ol>
+  <div class="section-label"><h2>What the price covers</h2></div>
+  <div class="costs">
+    <div><b>Archival materials</b><span>Premium art materials imported from makers with a long legacy.</span></div>
+    <div><b>Master artist & assistants</b><span>Labour, research and brainstorming for every piece.</span></div>
+    <div><b>Packaging & installation</b><span>Careful logistics, delivery and installation on site.</span></div>
+  </div>
+  <div class="section-label"><h2>In the studio</h2></div>
+  <div class="team crew">{tag('Vishal Tajnekar', 'Painter & sculptor. JJ School of Arts', '--cad', '#17181A')}{tag('Pradnyesh Molak', 'Art curation & concepts', '--rose', '#17181A')}</div>
+</div>'''
+(ROOT / 'arts-studio.html').write_text(shell('arts-studio', 'Arts Studio', 'Heirloom paintings, sculpture in basalt and bronze, murals, miniatures and scale models from Ziva Studios, Pune.',
+    pick('paintings', 'dsc00057')['lg'], 'Arts Studio', 'Arts Studio', '',
+    'Paint, clay and stone. Ultra-premium paintings and sculpture made with archival materials and museum-level craft, to outlive the people who commission them.',
+    'Made to last 500 years.', as_body, {'items': []}, cta='Commission a piece'), encoding='utf-8')
+print('design-lab, arts-studio done')

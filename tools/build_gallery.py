@@ -133,5 +133,30 @@ for page, (folder, groups) in PAGES.items():
     out[page] = [item(folder, n, t, g) for g, items in groups for n, t in items]
 out['photography'] = [item('jpeg', n, t, 'Raigad', lat=la, lon=lo) for n, t, la, lo in RAIGAD]
 
+V = 'vijay-jadhav-work/'
+DESIGN = {
+ 'design-dataviz': (V + 'data-visualisation', [('Data visualisation', [
+   ('15c6f478-a318-4f60-b42a-adff16bcf134', 'Pune, street-network poster'), ('34b6a078-31e4-4082-894b-ba79e899f530', 'Who works more?'),
+   ('42d3bb16-493f-4d24-8df5-b00290888908', "India's livestock population"), ('4b462539-2b69-4e79-9afb-f664ddeee811', 'Renewable energy generation'),
+   ('53294472-a379-4ce1-8f32-2301713a2152', "India's foreign trade"), ('7ba6ee7e-37da-487e-9ccb-fd6aebb3b6d8', "World's most polluted countries"),
+   ('a9009734-8831-4f31-b4f0-74f4435d25a1', 'Pangolin: the most trafficked mammal'), ('b1124183-a526-408c-b42d-d2a8170e8e72', 'International migrant stock'),
+   ('charts-1', 'Households with health insurance'), ('charts-2', 'Internet users'), ('charts-3', 'Export-import of India, 2021-22'),
+   ('charts-4', 'Deaths from disasters'), ('charts-5', 'Wealth and happiness'), ('charts-6', 'CO2 emissions'),
+   ('charts-7', 'Women in parliament'), ('e8a1b2c7-90ec-4f13-a513-21af850a78f9', 'India inflation rate, 1960-2021'),
+   ('f296c8e6-1bf2-4afc-8aeb-db9e8b258868', 'Most populated cities in India'), ('f4283c96-a835-4876-8fd5-7d275fac07eb', 'Demographics of India')])]),
+ 'design-maps': (V + 'maps', [('Maps', [
+   ('1', '3D population density map'), ('2', 'Population density of Maharashtra'), ('3', 'Healthcare centres in Pune'),
+   ('4', 'Rivers of South America'), ('5', 'River network of North America'), ('6', 'Walking times across Pune'),
+   ('7', 'Elevation joy plot of Maharashtra'), ('8', 'Land use and land cover, Maharashtra'), ('9', 'Unemployment in Europe, 2022'),
+   ('10', 'Industrial development across Maharashtra'), ('11', 'Road network of Maharashtra'), ('12', 'River network of East Asia'),
+   ('13', 'Clean cooking fuel, Maharashtra'), ('14', 'Electricity grid of Africa'), ('15', 'Healthcare access across Pune'),
+   ('16', 'Population density of Australia'), ('17', 'Mumbai'), ('18', 'Pune land use change, 2000-2020'), ('19', 'Retro map of Pune')])]),
+ 'design-saheb': (V + 'saheb-vishesh', [('Saheb Vishesh', [(str(i), f'Day {i}') for i in range(1, 80)])]),
+ 'design-letsread': (V + 'lets-read-foundation', [('Lets Read Foundation', [
+   ('1', 'Public libraries by state'), ('2', 'Public libraries by state, Marathi'), ('3', 'Top states, Marathi'), ('4', 'Top 8 states with the most public libraries')])]),
+}
+for page, (folder, groups) in DESIGN.items():
+    out[page] = [item(folder, n, t, g) for g, items in groups for n, t in items]
+
 (ROOT / 'data/gallery.json').write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding='utf-8')
 print({k: len(v) for k, v in out.items()})

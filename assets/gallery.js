@@ -45,8 +45,8 @@
   // any .g-item opens the lightbox for its own set (data-set) or the page set
   document.addEventListener('click', function (e) {
     var f = e.target.closest('.g-item'); if (!f) return;
-    var set = f.dataset.set === 'process' ? D.process : visible();
-    var x = (f.dataset.set === 'process' ? D.process : items)[+f.dataset.i];
+    var nm = f.dataset.set, set = nm ? D[nm] : visible();
+    var x = (nm ? D[nm] : items)[+f.dataset.i];
     open(set.indexOf(x), set);
   });
   document.addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('g-item')) { e.preventDefault(); e.target.click() } });
