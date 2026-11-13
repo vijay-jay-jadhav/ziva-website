@@ -121,6 +121,7 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 <meta property="og:title" content="{e(label)} · Ziva Studios"><meta property="og:image" content="{cover}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/logo/favicon-32.png"><link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css?v={VER}"><link rel="stylesheet" href="assets/gallery.css?v={VER}">{leaflet_css}
 </head>
 <body>
@@ -265,6 +266,7 @@ def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Sta
 <meta name="description" content="{e(desc)}">
 <meta property="og:title" content="{e(title)} · Ziva Studios"><meta property="og:image" content="{og}">
 {FONTS}
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/logo/favicon-32.png"><link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css?v={VER}"><link rel="stylesheet" href="assets/gallery.css?v={VER}">
 </head>
 <body>

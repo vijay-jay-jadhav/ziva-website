@@ -12,11 +12,6 @@
   --s-hero:clamp(2.6rem,6.4vw,5.9rem); --s-h2:clamp(2.2rem,4.6vw,3.9rem); --s-h3:clamp(1.5rem,2.4vw,2rem);
   --wrap:1240px; --night:#17181A; --night-fg:#ECEDE8; --night-soft:#A0A2A6;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#141518; --sheet:#1F2125; --ink:#ECEDE8; --ink-soft:#A4A7AC; --line:rgba(236,237,232,.16);
-  --ultra:#7088FF; --cad:#F7BE2A; --rose:#FF5A5C; --sap:#3FBF89;
-  --tape:rgba(200,190,150,.38); --shadow:0 14px 30px -12px rgba(0,0,0,.7);
-  --on-ultra:#0F1014; --on-cad:#17181A; --night:#0B0C0E; --plate:#FFFFFF; --plate-pad:4px 8px; --intro-pad:22px 30px; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#141518; --sheet:#1F2125; --ink:#ECEDE8; --ink-soft:#A4A7AC; --line:rgba(236,237,232,.16);
   --ultra:#7088FF; --cad:#F7BE2A; --rose:#FF5A5C; --sap:#3FBF89;
@@ -32,7 +27,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:70;opacity:.35;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 :root[data-theme="dark"] body::after{mix-blend-mode:screen;opacity:.12}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{mix-blend-mode:screen;opacity:.12}}
 a{color:inherit}
 :focus-visible{outline:2px dashed var(--ultra);outline-offset:3px}
 .wrap{max-width:var(--wrap);margin-inline:auto}
@@ -56,7 +50,6 @@ p{margin:0}
 .theme-btn svg{width:20px;height:20px}
 .theme-btn .moon{display:none}
 :root[data-theme="dark"] .theme-btn .sun{display:none}:root[data-theme="dark"] .theme-btn .moon{display:block}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-btn .sun{display:none}:root:not([data-theme="light"]) .theme-btn .moon{display:block}}
 .logo b{font-family:var(--f-display);font-weight:400;font-size:1.7rem;line-height:1}
 .logo span{font-family:var(--f-hand);font-size:1rem;color:var(--ink-soft);transform:rotate(-4deg);display:inline-block}
 .logo i{width:9px;height:9px;border-radius:50%;background:var(--rose);display:inline-block;transform:translateY(-2px)}
@@ -332,4 +325,3 @@ footer .wrap,.contact .wrap{color:inherit}
 }
 /* dark mode: soften the paint swipe so light text stays readable on it */
 :root[data-theme="dark"] .m-paint::before{background:color-mix(in srgb,var(--cad) 42%,var(--paper))}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .m-paint::before{background:color-mix(in srgb,var(--cad) 42%,var(--paper))}}

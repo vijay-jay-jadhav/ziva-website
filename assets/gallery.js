@@ -6,7 +6,7 @@
   var menuBtn = document.getElementById('menuBtn'), links = document.getElementById('links');
   menuBtn.addEventListener('click', function () { var o = links.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o) });
   var tb = document.getElementById('themeBtn');
-  function isDark() { var t = root.getAttribute('data-theme'); return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches }
+  function isDark() { var t = root.getAttribute('data-theme'); return t === 'dark' }
   try { var saved = localStorage.getItem('ziva-theme'); if (saved) root.setAttribute('data-theme', saved) } catch (e) {}
   tb.addEventListener('click', function () { var n = isDark() ? 'light' : 'dark'; root.setAttribute('data-theme', n); try { localStorage.setItem('ziva-theme', n) } catch (e) {} });
 
