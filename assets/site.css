@@ -79,7 +79,7 @@ p{margin:0}
 }
 
 /* ---------- HERO ---------- */
-.hero{position:relative;z-index:5;padding-block:clamp(40px,7vw,88px) clamp(48px,6vw,80px);cursor:none}
+.hero{position:relative;z-index:5;padding-block:clamp(28px,3.6vw,52px) clamp(40px,5vw,64px);cursor:none}
 .hero canvas#wall{position:absolute;inset:0;width:100%;height:100%;z-index:0;
   margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));width:calc(100% + max(16px,env(safe-area-inset-left,0px)) + max(16px,env(safe-area-inset-right,0px)))}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center}
@@ -101,7 +101,7 @@ p{margin:0}
 .m-film.draw path{animation-delay:1.4s}.m-brand.draw path{animation-delay:1.9s}
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .lede{max-width:46ch;font-size:1.13rem;color:var(--ink-soft);margin-top:26px}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .painter{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:36px;font-family:var(--f-hand);color:var(--ink-soft);font-size:1.05rem}
 .painter svg.arrow{width:46px;height:30px;color:var(--ink-soft)}
 .swatches{display:flex;gap:8px;align-items:center;background:var(--sheet);border:1px solid var(--line);padding:6px 8px;border-radius:999px;box-shadow:var(--shadow);cursor:auto}
