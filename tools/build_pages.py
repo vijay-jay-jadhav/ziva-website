@@ -39,7 +39,7 @@ def nav(cur):
     <ul class="links" id="links">
       <li><a href="index.html">Home</a></li>
       <li class="dd"><button aria-haspopup="true">Work ▾</button><div class="dd-menu">{items}</div></li>
-      <li><a href="index.html#divisions">Divisions</a></li>
+      <li class="dd"><button aria-haspopup="true">Divisions ▾</button><div class="dd-menu"><a href="index.html#design-lab"><span class="dot" style="background:var(--ultra)"></span>Design Lab</a><a href="filmmaking.html"><span class="dot" style="background:var(--rose)"></span>Filmmaking</a><a href="index.html#arts-studio"><span class="dot" style="background:var(--cad)"></span>Arts Studio</a></div></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
@@ -50,7 +50,7 @@ def nav(cur):
 FOOT = '''<footer>
   <div class="wrap">
     <div class="foot-top">
-      <nav aria-label="Footer"><a href="index.html">Home</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="index.html#contact">Contact</a></nav>
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="filmmaking.html">Filmmaking</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="index.html#contact">Contact</a></nav>
       <span class="hand" style="font-size:1.1rem;color:#C9CBCF">Made by hand in Pune</span>
     </div>
     <span class="foot-plate"><img class="foot-logo" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></span>
@@ -127,7 +127,7 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 <section class="page-hero">
   <div class="wrap">
     <div>
-      <p class="crumbs mono"><a href="index.html#work">Work</a><span>/</span><span>{e(label)}</span></p>
+      <p class="crumbs mono">{'<a href="filmmaking.html">Filmmaking</a>' if slug == 'photography' else '<a href="index.html#arts-studio">Arts Studio</a>'}<span>/</span><span>{e(label)}</span></p>
       <h1>{e(h1.rsplit(" ",1)[0]+" ") if " " in h1 else ""}<span class="mark m-paint" style="{hl.lstrip(";")}">{e(h1.rsplit(" ",1)[-1])}</span></h1>
       <p class="lede">{e(lede)}</p>
     </div>
@@ -152,3 +152,100 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 '''
     (ROOT / f'{slug}.html').write_text(page, encoding='utf-8')
     print(slug, len(page))
+
+# ---------------- Filmmaking division page (YouTube: Zindagi Vasool / Ziva Studios) ----------------
+CHANNEL = 'https://www.youtube.com/@ZindagiVasoolOfficial'
+UPLOADS = 'UUzfA9yjSwChmFiso-wsM-zw'   # channel's "all uploads" playlist
+SERIES = [  # (playlist id, first video id, title, count, blurb)
+ ('PLKOLJQ2cVvLFHC1rBDeKZXgMdlw-YNx3T', '-hd7CiFK3Rk', 'Zindagi Vasool with Saaku', 33, 'Travel, food and people, hosted by our creative director.'),
+ ('PLKOLJQ2cVvLGga74droTXjV5XMBDjfzuy', 'rhEj7KKalng', 'Shivsparsh Vichar', 34, 'Long conversations on history, society and ideas.'),
+ ('PLKOLJQ2cVvLE_wSZI4f2o6lm88PVLOXeh', 'dLjPt6Lbh3Y', 'पुरा-पर्यटन by Ketan Puri', 10, 'Caves, temples and lost cities of Maharashtra.'),
+ ('PLKOLJQ2cVvLGh5gVbqiJDcl_82cUPduNj', 'WsJPHNblOww', 'Poems of Ziva Studios', 16, 'Marathi and Hindi poetry, shot as short films.'),
+ ('PLKOLJQ2cVvLEurrM_GTu7oNDYfMHOJMfK', 'E3fBgM65fxo', 'प्रीतीसंगम काव्यकरंडक २०२५', 13, 'Recorded at the 2025 poetry competition.'),
+ ('PLKOLJQ2cVvLH5kV-KDblqGKpUQbAjwf9K', 'QglMGJzaXXM', 'Dr. Swapnil Chaudhari Poems', 4, 'Poems on farmers, mothers and free speech.'),
+ ('PLKOLJQ2cVvLE5pBHqKfldy5FpOVk4OJuc', 'E5peeh4Jn9M', 'Ziva Songs · Ajinkya Ankush', 2, 'Original music videos.'),
+ ('PLKOLJQ2cVvLHaf5cHIT3yioJCmCAAsQCI', 'YxfSfAGcLGE', 'जगावेगळं Unconventional Stories', 1, 'A podcast of unusual lives.'),
+]
+SHORTS = [
+ ('PLKOLJQ2cVvLGlqx_LXtRln87Q-60hDijl', 'aio7m7qz0QQ', 'Zindagi Vasool Shorts', 17),
+ ('PLKOLJQ2cVvLFYMNmU5WJNcmqlOrKbnmAM', 'QZEluTagCnw', 'Shivsparsh Vichar Shorts', 12),
+ ('PLKOLJQ2cVvLGMhhFXFvZNYmRUMQQa1-Y9', 'x6URucKXc9E', 'पुरा पर्यटन Shorts', 4),
+ ('PLKOLJQ2cVvLFkkDwuo6OgP4p6e0Td0JZz', 'iFrwoxoMzOc', 'Journey-E-Dakkhan Shorts', 3),
+ ('PLKOLJQ2cVvLGuBN-zZPNCR27tbLJbQOnx', 'dZ4y_2UKPc4', 'Travel Shorts', 1),
+]
+TOP = [  # most watched, linked to a channel search (views as of Nov 2026)
+ ('Afzal Khan Vadh · Pramod Mande', '174K'), ('Nagraj Manjule Interview with Pradnyesh Molak', '141K'),
+ ('Shivaji Maharaj यांची Paris येथील अस्सल चित्र', '116K'), ('कर्जबाजारपणाची जिंदगी by Swapnil Chaudhari', '96K'),
+ ('शिवबा राजं छत्रपती झाला रं · Powada', '90K'), ('Sambal Solo Performance by Prasad Pawar', '16K'),
+]
+from urllib.parse import quote
+def card(pl, vid, title, n, blurb='', cls='vcard'):
+    return (f'<button class="{cls}" type="button" data-list="{pl}" aria-label="Play {e(title)}">'
+            f'<span class="thumb"><img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy"><i class="play" aria-hidden="true"></i>'
+            f'<b class="mono">{n} video{"s" if n != 1 else ""}</b></span><span class="vt">{e(title)}</span>'
+            + (f'<span class="vb">{e(blurb)}</span>' if blurb else '') + '</button>')
+film_body = f'''<div class="wrap">
+  <div class="chips-row"><span>Ad films</span><span>Short films</span><span>Music videos</span><span>AV &amp; documentaries</span><span>Aerial cinematography</span></div>
+  <div class="reel">
+    <div class="player" id="player"><button class="poster" type="button" data-list="{UPLOADS}" aria-label="Play latest videos">
+      <img src="https://i.ytimg.com/vi/-hd7CiFK3Rk/maxresdefault.jpg" alt="" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')"><i class="play big" aria-hidden="true"></i><span class="hand">Play our latest work</span></button></div>
+    <aside class="channel">
+      <span class="mono">Our channel</span><h2>Zindagi Vasool</h2>
+      <p>Stories, interviews, travel and poetry in Marathi, made by the Ziva team since 2018.</p>
+      <div class="stats"><div><b>12.4K</b><span class="mono">subscribers</span></div><div><b>204</b><span class="mono">videos</span></div></div>
+      <a class="btn" href="{CHANNEL}" target="_blank" rel="noopener">Open on YouTube</a>
+    </aside>
+  </div>
+  <div class="section-label"><h2>Series we make</h2><span class="hand">Tap one to play the whole playlist</span></div>
+  <div class="vgrid">{"".join(card(*s) for s in SERIES)}</div>
+  <div class="section-label"><h2>Shorts</h2><span class="hand">Vertical, under a minute</span></div>
+  <div class="sgrid">{"".join(card(p, v, t, n, cls="vcard short") for p, v, t, n in SHORTS)}</div>
+  <div class="section-label"><h2>Most watched</h2><span class="hand">Opens on YouTube</span></div>
+  <ol class="top">{"".join(f'<li><a href="{CHANNEL}/search?query={quote(t)}" target="_blank" rel="noopener"><span>{e(t)}</span><b class="mono">{v} views</b></a></li>' for t, v in TOP)}</ol>
+  <a class="photo-link" href="photography.html"><img src="{G['photography'][2]['sm']}" alt="" loading="lazy"><span><span class="mono">Also from this division</span><b>Photography: 30 places across Raigad</b></span></a>
+  <div class="section-label"><h2>The film crew</h2></div>
+  <div class="team crew">
+    <div class="tag" style="--c:var(--rose);--fgc:#17181A"><header><b>HELLO</b><small>my name is</small></header><div class="nm">Pradnyesh Molak</div><p class="rl">Creative director, host & producer</p></div>
+    <div class="tag" style="--c:var(--rose);--fgc:#17181A"><header><b>HELLO</b><small>my name is</small></header><div class="nm">Pankaj Lokhande</div><p class="rl">Director of photography & aerial drone operator</p></div>
+    <div class="tag" style="--c:var(--ultra);--fgc:var(--on-ultra)"><header><b>HELLO</b><small>my name is</small></header><div class="nm">Manoj Janwekar</div><p class="rl">Editor & motion graphics</p></div>
+  </div>
+</div>'''
+VM = '<div class="lb vm" id="vm" hidden role="dialog" aria-modal="true" aria-label="Video player"><button class="close" type="button" aria-label="Close">✕</button><div class="vbox"></div></div>'
+FILM_JS = '''<script>
+(function(){
+  var vm=document.getElementById('vm'),box=vm.querySelector('.vbox');
+  function src(l){return 'https://www.youtube-nocookie.com/embed/videoseries?list='+l+'&autoplay=1&rel=0'}
+  function frame(l){return '<iframe src="'+src(l)+'" title="YouTube video player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'}
+  document.querySelector('.poster').addEventListener('click',function(){document.getElementById('player').innerHTML=frame(this.dataset.list)});
+  document.querySelectorAll('.vcard').forEach(function(b){b.addEventListener('click',function(){box.className='vbox'+(b.classList.contains('short')?' tall':'');box.innerHTML=frame(b.dataset.list);vm.hidden=false;document.body.style.overflow='hidden'})});
+  function close(){vm.hidden=true;box.innerHTML='';document.body.style.overflow=''}
+  vm.querySelector('.close').onclick=close;vm.addEventListener('click',function(e){if(e.target===vm)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!vm.hidden)close()});
+})();
+</script>'''
+fp = page  # reuse the last generated page as a shell: swap head, hero and body
+import re
+fp = re.sub(r'<title>.*?</title>', '<title>Filmmaking · Ziva Studios</title>', fp)
+fp = re.sub(r'<meta name="description" content=".*?">', '<meta name="description" content="Ad films, short films, music videos, documentaries and aerial cinematography from Ziva Studios, Pune.">', fp)
+fp = re.sub(r'<meta property="og:title".*?>', '<meta property="og:title" content="Filmmaking · Ziva Studios"><meta property="og:image" content="https://i.ytimg.com/vi/-hd7CiFK3Rk/maxresdefault.jpg">', fp)
+fp = fp.replace('<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">', '')
+fp = fp.replace('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>', '')
+hero = '''<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <p class="crumbs mono"><a href="index.html#divisions">Divisions</a><span>/</span><span>Filmmaking</span></p>
+      <h1><span class="mark m-paint" style="--cad:var(--rose)">Filmmaking</span></h1>
+      <p class="lede">Ads, short films and songs, from script to drone shot to final grade. Most of what we shoot also lives on our own channel.</p>
+    </div>
+    <p class="note">Press play. Everything here was made by the same small team.</p>
+  </div>
+</section>'''
+fp = re.sub(r'<section class="page-hero">.*?</section>', hero, fp, flags=re.S)
+fp = re.sub(r'<div class="wrap">\n  <div class="atlas">.*?\n</div>\n(?=<section class="cta-band">)', film_body + '\n', fp, flags=re.S)
+fp = fp.replace('<h2>Want one of these?</h2>', '<h2>Have a film in mind?</h2>')
+fp = re.sub(r'<script>window\.ZIVA=.*?</script>\n', '', fp)
+fp = fp.replace('<script src="assets/gallery.js"></script>', '<script>window.ZIVA={items:[]};</script>\n<script src="assets/gallery.js"></script>\n' + FILM_JS)
+fp = fp.replace('</footer>', '</footer>\n' + VM, 1)
+fp = fp.replace('aria-current="page"', '')
+(ROOT / 'filmmaking.html').write_text(fp, encoding='utf-8')
+print('filmmaking', len(fp))

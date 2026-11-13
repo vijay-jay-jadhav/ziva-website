@@ -135,3 +135,51 @@
 .lb button:hover{border-color:var(--cad);color:var(--cad)}
 .lb .nav-btns{display:flex;gap:10px}
 .lb .close{position:absolute;top:12px;right:max(14px,3vw)}
+
+/* ---------- FILMMAKING ---------- */
+.chips-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(28px,4vw,44px)}
+.chips-row span{border:1.5px solid var(--ink);border-radius:999px;padding:4px 14px;font-size:.92rem;font-weight:500}
+.reel{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center}
+.player{position:relative;aspect-ratio:16/9;background:#0B0C0E;box-shadow:var(--shadow);transform:rotate(-.6deg);border:10px solid var(--sheet)}
+.player iframe,.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poster{position:absolute;inset:0;padding:0;border:0;background:#000;cursor:pointer;color:#fff}
+.poster img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .3s}
+.poster:hover img{opacity:1}
+.poster .hand{position:absolute;left:20px;bottom:16px;font-size:1.3rem;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+.play{position:absolute;left:50%;top:50%;width:58px;height:58px;translate:-50% -50%;border-radius:50%;background:var(--rose);box-shadow:0 6px 18px rgba(0,0,0,.4);transition:transform .25s}
+.play::after{content:"";position:absolute;left:54%;top:50%;translate:-50% -50%;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #17181A}
+.play.big{width:88px;height:88px}.play.big::after{border-width:15px 0 15px 24px}
+.poster:hover .play,.vcard:hover .play{transform:scale(1.12)}
+.channel{display:grid;gap:14px}
+.channel h2{font-size:var(--s-h2)}
+.channel p{color:var(--ink-soft)}
+.stats{display:flex;gap:30px}
+.stats b{display:block;font-family:var(--f-display);font-weight:400;font-size:2.4rem;line-height:1}
+.stats .mono{color:var(--ink-soft)}
+.channel .btn{justify-self:start}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:clamp(18px,2.4vw,30px)}
+.vcard{display:flex;flex-direction:column;gap:6px;text-align:left;background:none;border:0;padding:0;color:var(--ink);font:inherit;cursor:pointer}
+.vcard .thumb{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#111;box-shadow:var(--shadow);border-radius:6px}
+.vcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.vcard:hover .thumb img{transform:scale(1.05)}
+.vcard .thumb b{position:absolute;right:8px;bottom:8px;background:rgba(10,10,12,.82);color:#fff;padding:3px 7px;border-radius:4px;font-size:.66rem}
+.vcard .vt{font-weight:600;font-size:1.02rem;margin-top:6px}
+.vcard .vb{color:var(--ink-soft);font-size:.92rem;line-height:1.45}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.vcard.short .thumb{aspect-ratio:9/14}
+.top{list-style:none;margin:0;padding:0;counter-reset:t;border-top:1.5px solid var(--ink)}
+.top li{counter-increment:t;border-bottom:1px dashed var(--line)}
+.top a{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:14px 4px;text-decoration:none;font-size:1.05rem}
+.top a::before{content:counter(t,decimal-leading-zero);font-family:var(--f-display);font-size:1.5rem;color:var(--rose)}
+.top a:hover span{text-decoration:underline wavy var(--rose)}
+.top b{color:var(--ink-soft)}
+.photo-link{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;align-items:center;margin-top:clamp(48px,7vw,80px);background:var(--sheet);padding:12px;box-shadow:var(--shadow);text-decoration:none;transform:rotate(.6deg);transition:transform .3s}
+.photo-link:hover{transform:rotate(0) translateY(-4px)}
+.photo-link img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.photo-link b{display:block;font-family:var(--f-display);font-weight:400;font-size:var(--s-h3);margin-top:4px}
+.photo-link .mono{color:var(--ink-soft)}
+.crew{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important}
+.vm .vbox{position:relative;width:min(92vw,1100px);aspect-ratio:16/9;margin:auto;align-self:center}
+.vm .vbox.tall{width:min(92vw,calc(78vh*9/16));aspect-ratio:9/16}
+.vm{place-items:center;grid-template-rows:1fr}
+@media (max-width:860px){.reel{grid-template-columns:1fr}.photo-link{grid-template-columns:1fr}.top a{grid-template-columns:34px minmax(0,1fr)}.top b{grid-column:2}}

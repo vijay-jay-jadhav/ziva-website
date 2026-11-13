@@ -68,7 +68,7 @@
     });
   }
 
-  var G = document.getElementById('gallery'), layout = G.dataset.layout;
+  var G = document.getElementById('gallery'); if (!G) return; var layout = G.dataset.layout;
 
   if (layout === 'salon') {
     filters(document.getElementById('filters'));
