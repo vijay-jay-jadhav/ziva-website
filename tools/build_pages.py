@@ -324,7 +324,7 @@ dl_body = f'''<div class="wrap">
   <div class="team crew">{tag('Manoj Janwekar', 'Editor, graphic designer & motion graphics', '--ultra', 'var(--on-ultra)')}{tag('Samruddhi Kadolkar', 'Graphic designer, illustrator & visual storyteller', '--sap', '#FBFBF8')}{tag('Vijay Jadhav', 'Data visualisation & infographics', '--ultra', 'var(--on-ultra)')}</div>
 </div>'''
 (ROOT / 'design-lab.html').write_text(shell('design-lab', 'Design Lab', 'Brand identity, graphics, data visualisation, maps and infographics from Ziva Studios, Pune.',
-    DV[3]['lg'], 'Design Lab', 'Design Lab', '--cad:var(--ultra);color:var(--on-ultra)',
+    DV[3]['lg'], 'Design Lab', 'Design Lab', '--cad:color-mix(in srgb, var(--ultra) 45%, var(--paper))',
     'Identity, graphics and data turned into something people can read at a glance. Charts, maps and social series, made from real data and checked twice.',
     'Every chart here started as a spreadsheet.', dl_body, {'items': [], 'dv': DV, 'mp': MP, 'sv': SV, 'lr': LR}), encoding='utf-8')
 
