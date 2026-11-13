@@ -127,20 +127,6 @@
  },
  {
   "folder": "unsorted",
-  "name": "dsc00074",
-  "original": "DSC00074.JPG",
-  "orig_w": "6000",
-  "orig_h": "4000",
-  "orientation": "landscape",
-  "lg_w": "2400",
-  "lg_h": "1600",
-  "lg_path": "images/lg/unsorted/dsc00074.webp",
-  "sm_w": "800",
-  "sm_h": "533",
-  "sm_path": "images/sm/unsorted/dsc00074.webp"
- },
- {
-  "folder": "unsorted",
   "name": "img-20180215-wa0001",
   "original": "IMG-20180215-WA0001.jpg",
   "orig_w": "1280",
@@ -435,20 +421,6 @@
  },
  {
   "folder": "unsorted",
-  "name": "img-9521",
-  "original": "IMG_9521.JPG",
-  "orig_w": "4160",
-  "orig_h": "6240",
-  "orientation": "portrait",
-  "lg_w": "1600",
-  "lg_h": "2400",
-  "lg_path": "images/lg/unsorted/img-9521.webp",
-  "sm_w": "533",
-  "sm_h": "800",
-  "sm_path": "images/sm/unsorted/img-9521.webp"
- },
- {
-  "folder": "unsorted",
   "name": "img-9530",
   "original": "IMG_9530.JPG",
   "orig_w": "4160",
@@ -460,20 +432,6 @@
   "sm_w": "533",
   "sm_h": "800",
   "sm_path": "images/sm/unsorted/img-9530.webp"
- },
- {
-  "folder": "unsorted",
-  "name": "img-9536",
-  "original": "IMG_9536.JPG",
-  "orig_w": "4160",
-  "orig_h": "6240",
-  "orientation": "portrait",
-  "lg_w": "1600",
-  "lg_h": "2400",
-  "lg_path": "images/lg/unsorted/img-9536.webp",
-  "sm_w": "533",
-  "sm_h": "800",
-  "sm_path": "images/sm/unsorted/img-9536.webp"
  },
  {
   "folder": "unsorted",
@@ -1233,20 +1191,6 @@
  },
  {
   "folder": "murals",
-  "name": "1",
-  "original": "Murals\\1.JPG",
-  "orig_w": "2083",
-  "orig_h": "2083",
-  "orientation": "square",
-  "lg_w": "2083",
-  "lg_h": "2083",
-  "lg_path": "images/lg/murals/1.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/murals/1.webp"
- },
- {
-  "folder": "murals",
   "name": "180ef56b-e7e0-4054-bcf9-e732d0c18bdf",
   "original": "Murals\\180ef56b-e7e0-4054-bcf9-e732d0c18bdf.jpg",
   "orig_w": "1200",
@@ -1272,20 +1216,6 @@
   "sm_w": "800",
   "sm_h": "800",
   "sm_path": "images/sm/murals/2.webp"
- },
- {
-  "folder": "murals",
-  "name": "3",
-  "original": "Murals\\3.JPG",
-  "orig_w": "2083",
-  "orig_h": "2083",
-  "orientation": "square",
-  "lg_w": "2083",
-  "lg_h": "2083",
-  "lg_path": "images/lg/murals/3.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/murals/3.webp"
  },
  {
   "folder": "murals",
@@ -1961,20 +1891,6 @@
  },
  {
   "folder": "sculptures",
-  "name": "phule-2",
-  "original": "Sculptures\\phule.png",
-  "orig_w": "1456",
-  "orig_h": "2800",
-  "orientation": "portrait",
-  "lg_w": "1248",
-  "lg_h": "2400",
-  "lg_path": "images/lg/sculptures/phule-2.webp",
-  "sm_w": "416",
-  "sm_h": "800",
-  "sm_path": "images/sm/sculptures/phule-2.webp"
- },
- {
-  "folder": "sculptures",
   "name": "rath",
   "original": "Sculptures\\Rath.jpg",
   "orig_w": "3364",
@@ -2000,20 +1916,6 @@
   "sm_w": "393",
   "sm_h": "800",
   "sm_path": "images/sm/sculptures/shahu.webp"
- },
- {
-  "folder": "sculptures",
-  "name": "shahu-2",
-  "original": "Sculptures\\Shahu.png",
-  "orig_w": "1440",
-  "orig_h": "3222",
-  "orientation": "portrait",
-  "lg_w": "1073",
-  "lg_h": "2400",
-  "lg_path": "images/lg/sculptures/shahu-2.webp",
-  "sm_w": "358",
-  "sm_h": "800",
-  "sm_path": "images/sm/sculptures/shahu-2.webp"
  },
  {
   "folder": "sculptures",
@@ -2129,20 +2031,6 @@
  },
  {
   "folder": "unsorted",
-  "name": "img-0560",
-  "original": "IMG_0560.HEIC",
-  "orig_w": 3024,
-  "orig_h": 4032,
-  "orientation": "portrait",
-  "lg_w": 1800,
-  "lg_h": 2400,
-  "lg_path": "images/lg/unsorted/img-0560.webp",
-  "sm_w": 600,
-  "sm_h": 800,
-  "sm_path": "images/sm/unsorted/img-0560.webp"
- },
- {
-  "folder": "unsorted",
   "name": "img-0565",
   "original": "IMG_0565.HEIC",
   "orig_w": 3024,
@@ -2168,34 +2056,6 @@
   "sm_w": 600,
   "sm_h": 800,
   "sm_path": "images/sm/unsorted/img-0572.webp"
- },
- {
-  "folder": "unsorted",
-  "name": "img-0574",
-  "original": "IMG_0574.HEIC",
-  "orig_w": 3024,
-  "orig_h": 4032,
-  "orientation": "portrait",
-  "lg_w": 1800,
-  "lg_h": 2400,
-  "lg_path": "images/lg/unsorted/img-0574.webp",
-  "sm_w": 600,
-  "sm_h": 800,
-  "sm_path": "images/sm/unsorted/img-0574.webp"
- },
- {
-  "folder": "unsorted",
-  "name": "img-0576",
-  "original": "IMG_0576.HEIC",
-  "orig_w": 3024,
-  "orig_h": 4032,
-  "orientation": "portrait",
-  "lg_w": 1800,
-  "lg_h": 2400,
-  "lg_path": "images/lg/unsorted/img-0576.webp",
-  "sm_w": 600,
-  "sm_h": 800,
-  "sm_path": "images/sm/unsorted/img-0576.webp"
  },
  {
   "folder": "unsorted",
@@ -2269,20 +2129,6 @@
  },
  {
   "folder": "models",
-  "name": "img-5562",
-  "original": "Models\\IMG_5562.HEIC",
-  "orig_w": 4032,
-  "orig_h": 3024,
-  "orientation": "landscape",
-  "lg_w": 2400,
-  "lg_h": 1800,
-  "lg_path": "images/lg/models/img-5562.webp",
-  "sm_w": 800,
-  "sm_h": 600,
-  "sm_path": "images/sm/models/img-5562.webp"
- },
- {
-  "folder": "models",
   "name": "img-5563",
   "original": "Models\\IMG_5563.HEIC",
   "orig_w": 4032,
@@ -2308,20 +2154,6 @@
   "sm_w": 800,
   "sm_h": 600,
   "sm_path": "images/sm/models/img-5565.webp"
- },
- {
-  "folder": "models",
-  "name": "img-5566",
-  "original": "Models\\IMG_5566.HEIC",
-  "orig_w": 4032,
-  "orig_h": 3024,
-  "orientation": "landscape",
-  "lg_w": 2400,
-  "lg_h": 1800,
-  "lg_path": "images/lg/models/img-5566.webp",
-  "sm_w": 800,
-  "sm_h": 600,
-  "sm_path": "images/sm/models/img-5566.webp"
  },
  {
   "folder": "models",
@@ -2448,20 +2280,6 @@
   "sm_w": 800,
   "sm_h": 600,
   "sm_path": "images/sm/murals/img-0570.webp"
- },
- {
-  "folder": "murals",
-  "name": "img-0572",
-  "original": "Murals\\IMG_0572.HEIC",
-  "orig_w": 5712,
-  "orig_h": 4284,
-  "orientation": "landscape",
-  "lg_w": 2400,
-  "lg_h": 1800,
-  "lg_path": "images/lg/murals/img-0572.webp",
-  "sm_w": 800,
-  "sm_h": 600,
-  "sm_path": "images/sm/murals/img-0572.webp"
  },
  {
   "folder": "murals",
@@ -2745,20 +2563,6 @@
  },
  {
   "folder": "sculptures",
-  "name": "img-5021",
-  "original": "Sculptures\\IMG_5021.HEIC",
-  "orig_w": 3024,
-  "orig_h": 4032,
-  "orientation": "portrait",
-  "lg_w": 1800,
-  "lg_h": 2400,
-  "lg_path": "images/lg/sculptures/img-5021.webp",
-  "sm_w": 600,
-  "sm_h": 800,
-  "sm_path": "images/sm/sculptures/img-5021.webp"
- },
- {
-  "folder": "sculptures",
   "name": "img-5333",
   "original": "Sculptures\\IMG_5333.HEIC",
   "orig_w": 3024,
@@ -2798,20 +2602,6 @@
   "sm_w": 600,
   "sm_h": 800,
   "sm_path": "images/sm/sculptures/img-6278.webp"
- },
- {
-  "folder": "sculptures",
-  "name": "img-6280",
-  "original": "Sculptures\\IMG_6280.HEIC",
-  "orig_w": 3024,
-  "orig_h": 4032,
-  "orientation": "portrait",
-  "lg_w": 1800,
-  "lg_h": 2400,
-  "lg_path": "images/lg/sculptures/img-6280.webp",
-  "sm_w": 600,
-  "sm_h": 800,
-  "sm_path": "images/sm/sculptures/img-6280.webp"
  },
  {
   "folder": "sculptures",
@@ -2868,20 +2658,6 @@
   "sm_w": 600,
   "sm_h": 800,
   "sm_path": "images/sm/sculptures/img-9310.webp"
- },
- {
-  "folder": "sculptures",
-  "name": "img-9312",
-  "original": "Sculptures\\IMG_9312.HEIC",
-  "orig_w": 3024,
-  "orig_h": 4032,
-  "orientation": "portrait",
-  "lg_w": 1800,
-  "lg_h": 2400,
-  "lg_path": "images/lg/sculptures/img-9312.webp",
-  "sm_w": 600,
-  "sm_h": 800,
-  "sm_path": "images/sm/sculptures/img-9312.webp"
  },
  {
   "folder": "sculptures",
@@ -2955,20 +2731,6 @@
  },
  {
   "folder": "sculptures",
-  "name": "img-9587",
-  "original": "Sculptures\\IMG_9587.HEIC",
-  "orig_w": 4032,
-  "orig_h": 3024,
-  "orientation": "landscape",
-  "lg_w": 2400,
-  "lg_h": 1800,
-  "lg_path": "images/lg/sculptures/img-9587.webp",
-  "sm_w": 800,
-  "sm_h": 600,
-  "sm_path": "images/sm/sculptures/img-9587.webp"
- },
- {
-  "folder": "sculptures",
   "name": "img-9588",
   "original": "Sculptures\\IMG_9588.HEIC",
   "orig_w": 3024,
@@ -3025,20 +2787,6 @@
  },
  {
   "folder": "vijay-jadhav-work/data-visualisation",
-  "name": "35bf43aa-40c8-49e3-be43-49c6de3ccb47",
-  "original": "Vijay Jadhav Work\\Data Visualisation\\35bf43aa-40c8-49e3-be43-49c6de3ccb47.JPG",
-  "orig_w": "1241",
-  "orig_h": "1241",
-  "orientation": "square",
-  "lg_w": "1241",
-  "lg_h": "1241",
-  "lg_path": "images/lg/vijay-jadhav-work/data-visualisation/35bf43aa-40c8-49e3-be43-49c6de3ccb47.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/35bf43aa-40c8-49e3-be43-49c6de3ccb47.webp"
- },
- {
-  "folder": "vijay-jadhav-work/data-visualisation",
   "name": "42d3bb16-493f-4d24-8df5-b00290888908",
   "original": "Vijay Jadhav Work\\Data Visualisation\\42d3bb16-493f-4d24-8df5-b00290888908.JPG",
   "orig_w": "819",
@@ -3050,20 +2798,6 @@
   "sm_w": "640",
   "sm_h": "800",
   "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/42d3bb16-493f-4d24-8df5-b00290888908.webp"
- },
- {
-  "folder": "vijay-jadhav-work/data-visualisation",
-  "name": "43d8d600-2078-4aa9-b4ae-379fe8e4451b",
-  "original": "Vijay Jadhav Work\\Data Visualisation\\43d8d600-2078-4aa9-b4ae-379fe8e4451b.JPG",
-  "orig_w": "1241",
-  "orig_h": "1241",
-  "orientation": "square",
-  "lg_w": "1241",
-  "lg_h": "1241",
-  "lg_path": "images/lg/vijay-jadhav-work/data-visualisation/43d8d600-2078-4aa9-b4ae-379fe8e4451b.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/43d8d600-2078-4aa9-b4ae-379fe8e4451b.webp"
  },
  {
   "folder": "vijay-jadhav-work/data-visualisation",
@@ -3134,20 +2868,6 @@
   "sm_w": "800",
   "sm_h": "800",
   "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/b1124183-a526-408c-b42d-d2a8170e8e72.webp"
- },
- {
-  "folder": "vijay-jadhav-work/data-visualisation",
-  "name": "b5ee37a2-cc17-43ca-848e-181e92fd5d19",
-  "original": "Vijay Jadhav Work\\Data Visualisation\\b5ee37a2-cc17-43ca-848e-181e92fd5d19.JPG",
-  "orig_w": "1241",
-  "orig_h": "1241",
-  "orientation": "square",
-  "lg_w": "1241",
-  "lg_h": "1241",
-  "lg_path": "images/lg/vijay-jadhav-work/data-visualisation/b5ee37a2-cc17-43ca-848e-181e92fd5d19.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/b5ee37a2-cc17-43ca-848e-181e92fd5d19.webp"
  },
  {
   "folder": "vijay-jadhav-work/data-visualisation",
@@ -3246,20 +2966,6 @@
   "sm_w": "800",
   "sm_h": "800",
   "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/charts-7.webp"
- },
- {
-  "folder": "vijay-jadhav-work/data-visualisation",
-  "name": "e1d0dcab-ebbc-41d9-963d-55476a0e8604",
-  "original": "Vijay Jadhav Work\\Data Visualisation\\e1d0dcab-ebbc-41d9-963d-55476a0e8604.JPG",
-  "orig_w": "1241",
-  "orig_h": "1241",
-  "orientation": "square",
-  "lg_w": "1241",
-  "lg_h": "1241",
-  "lg_path": "images/lg/vijay-jadhav-work/data-visualisation/e1d0dcab-ebbc-41d9-963d-55476a0e8604.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/data-visualisation/e1d0dcab-ebbc-41d9-963d-55476a0e8604.webp"
  },
  {
   "folder": "vijay-jadhav-work/data-visualisation",
@@ -3624,62 +3330,6 @@
   "sm_w": "800",
   "sm_h": "800",
   "sm_path": "images/sm/vijay-jadhav-work/maps/9.webp"
- },
- {
-  "folder": "vijay-jadhav-work/maps",
-  "name": "whatsapp-image-2024-10-09-at-12-21-58-1",
-  "original": "Vijay Jadhav Work\\Maps\\WhatsApp Image 2024-10-09 at 12.21.58 (1).jpeg",
-  "orig_w": "1600",
-  "orig_h": "1600",
-  "orientation": "square",
-  "lg_w": "1600",
-  "lg_h": "1600",
-  "lg_path": "images/lg/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-21-58-1.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-21-58-1.webp"
- },
- {
-  "folder": "vijay-jadhav-work/maps",
-  "name": "whatsapp-image-2024-10-09-at-12-21-58-2",
-  "original": "Vijay Jadhav Work\\Maps\\WhatsApp Image 2024-10-09 at 12.21.58 (2).jpeg",
-  "orig_w": "1600",
-  "orig_h": "1600",
-  "orientation": "square",
-  "lg_w": "1600",
-  "lg_h": "1600",
-  "lg_path": "images/lg/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-21-58-2.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-21-58-2.webp"
- },
- {
-  "folder": "vijay-jadhav-work/maps",
-  "name": "whatsapp-image-2024-10-09-at-12-21-58",
-  "original": "Vijay Jadhav Work\\Maps\\WhatsApp Image 2024-10-09 at 12.21.58.jpeg",
-  "orig_w": "1600",
-  "orig_h": "1600",
-  "orientation": "square",
-  "lg_w": "1600",
-  "lg_h": "1600",
-  "lg_path": "images/lg/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-21-58.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-21-58.webp"
- },
- {
-  "folder": "vijay-jadhav-work/maps",
-  "name": "whatsapp-image-2024-10-09-at-12-22-12",
-  "original": "Vijay Jadhav Work\\Maps\\WhatsApp Image 2024-10-09 at 12.22.12.jpeg",
-  "orig_w": "1600",
-  "orig_h": "1600",
-  "orientation": "square",
-  "lg_w": "1600",
-  "lg_h": "1600",
-  "lg_path": "images/lg/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-22-12.webp",
-  "sm_w": "800",
-  "sm_h": "800",
-  "sm_path": "images/sm/vijay-jadhav-work/maps/whatsapp-image-2024-10-09-at-12-22-12.webp"
  },
  {
   "folder": "vijay-jadhav-work/saheb-vishesh",
