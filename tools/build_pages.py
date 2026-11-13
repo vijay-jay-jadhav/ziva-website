@@ -3,6 +3,8 @@ import json, html
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+import hashlib
+VER = hashlib.md5(b''.join((ROOT / f).read_bytes() for f in ('assets/site.css', 'assets/gallery.css', 'assets/gallery.js'))).hexdigest()[:8]
 G = json.loads((ROOT / 'data/gallery.json').read_text(encoding='utf-8'))
 
 PAGES = [  # slug, nav label, colour, eyebrow, h1, lede, note, layout
@@ -119,7 +121,7 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 <meta property="og:title" content="{e(label)} · Ziva Studios"><meta property="og:image" content="{cover}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/gallery.css">{leaflet_css}
+<link rel="stylesheet" href="assets/site.css?v={VER}"><link rel="stylesheet" href="assets/gallery.css?v={VER}">{leaflet_css}
 </head>
 <body>
 {nav(slug)}
@@ -146,7 +148,7 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 {LB}
 <script>window.ZIVA={json.dumps(data, ensure_ascii=False, separators=(',', ':'))};</script>
 {leaflet_js}
-<script src="assets/gallery.js"></script>
+<script src="assets/gallery.js?v={VER}"></script>
 </body>
 </html>
 '''
@@ -244,7 +246,7 @@ fp = re.sub(r'<section class="page-hero">.*?</section>', hero, fp, flags=re.S)
 fp = re.sub(r'<div class="wrap">\n  <div class="atlas">.*?\n</div>\n(?=<section class="cta-band">)', film_body + '\n', fp, flags=re.S)
 fp = fp.replace('<h2>Want one of these?</h2>', '<h2>Have a film in mind?</h2>')
 fp = re.sub(r'<script>window\.ZIVA=.*?</script>\n', '', fp)
-fp = fp.replace('<script src="assets/gallery.js"></script>', '<script>window.ZIVA={items:[]};</script>\n<script src="assets/gallery.js"></script>\n' + FILM_JS)
+fp = fp.replace(f'<script src="assets/gallery.js?v={VER}"></script>', f'<script>window.ZIVA={{items:[]}};</script>\n<script src="assets/gallery.js?v={VER}"></script>\n' + FILM_JS)
 fp = fp.replace('</footer>', '</footer>\n' + VM, 1)
 fp = fp.replace('aria-current="page"', '')
 (ROOT / 'filmmaking.html').write_text(fp, encoding='utf-8')
@@ -263,7 +265,7 @@ def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Sta
 <meta name="description" content="{e(desc)}">
 <meta property="og:title" content="{e(title)} · Ziva Studios"><meta property="og:image" content="{og}">
 {FONTS}
-<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/gallery.css">
+<link rel="stylesheet" href="assets/site.css?v={VER}"><link rel="stylesheet" href="assets/gallery.css?v={VER}">
 </head>
 <body>
 {nav('')}
@@ -289,7 +291,7 @@ def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Sta
 {FOOT}
 {LB}
 <script>window.ZIVA={json.dumps(data, ensure_ascii=False, separators=(',', ':'))};</script>
-<script src="assets/gallery.js"></script>
+<script src="assets/gallery.js?v={VER}"></script>
 </body>
 </html>
 '''
