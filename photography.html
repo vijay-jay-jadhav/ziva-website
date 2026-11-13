@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Photography · Ziva Studios</title>
+<meta name="description" content="Thirty places across Raigad district, from sea forts to ghats, photographed for a large-format print series.">
+<meta property="og:title" content="Photography · Ziva Studios"><meta property="og:image" content="images/lg/jpeg/1-alibaug-30-x-20.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Ziva studio space, home"><img class="lg-l" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></a>
+    <button class="theme-btn" id="themeBtn" aria-label="Switch light or dark mode" title="Light / dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
+    <button class="btn ghost menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
+    <ul class="links" id="links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><button aria-haspopup="true">Work ▾</button><div class="dd-menu"><a href="paintings.html"><span class="dot" style="background:var(--ultra)"></span>Paintings</a><a href="sculptures.html"><span class="dot" style="background:var(--cad)"></span>Sculptures</a><a href="murals.html"><span class="dot" style="background:var(--rose)"></span>Murals</a><a href="miniature-statues.html"><span class="dot" style="background:var(--sap)"></span>Miniature Statues</a><a href="miniature-models.html"><span class="dot" style="background:var(--ultra)"></span>Miniature Models</a><a href="photography.html" aria-current="page"><span class="dot" style="background:var(--rose)"></span>Photography</a></div></li>
+      <li><a href="index.html#divisions">Divisions</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a class="btn cta" href="index.html#contact">Start a project</a>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <p class="crumbs mono"><a href="index.html#work">Work</a><span>/</span><span>Photography</span></p>
+      <h1><span class="mark m-paint" style="--cad:var(--rose)">Photography</span></h1>
+      <p class="lede">Thirty places across Raigad district, from sea forts to ghats, photographed for a large-format print series.</p>
+    </div>
+    <p class="note">Hover a pin, then click to open the photo.</p>
+  </div>
+</section>
+<div class="wrap">
+  <div class="atlas">
+    <div class="map-wrap"><div id="map" role="region" aria-label="Map of Raigad district with numbered photo locations"></div><p class="map-note">Pins show approximate locations.</p></div>
+    <div class="places" id="places"></div>
+  </div>
+  <div id="gallery" data-layout="atlas" hidden></div>
+</div>
+<section class="cta-band">
+  <div class="wrap">
+    <div><h2>Want one of these?</h2><div class="other-pages"><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniature Statues</a><a href="miniature-models.html">Miniature Models</a></div></div>
+    <a class="btn" href="index.html#contact">Start a project</a>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="index.html#contact">Contact</a></nav>
+      <span class="hand" style="font-size:1.1rem;color:#C9CBCF">Made by hand in Pune</span>
+    </div>
+    <span class="foot-plate"><img class="foot-logo" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></span>
+    <div class="foot-bottom"><span class="mono">© 2026 Ziva Studios</span><span class="mono">Design Lab · Filmmaking · Arts Studio</span></div>
+  </div>
+</footer>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="close" type="button" aria-label="Close">✕</button>
+  <figure><img alt=""></figure>
+  <div class="bar"><span class="cap"></span><span class="nav-btns"><button class="prev" type="button" aria-label="Previous">←</button><button class="next" type="button" aria-label="Next">→</button></span></div>
+</div>
+<script>window.ZIVA={"items":[{"title":"Alibaug Beach","group":"Raigad","sm":"images/sm/jpeg/1-alibaug-30-x-20.webp","lg":"images/lg/jpeg/1-alibaug-30-x-20.webp","w":"2400","h":"1600","lat":18.641,"lon":72.872},{"title":"Kolaba Fort","group":"Raigad","sm":"images/sm/jpeg/2-kolaba-fort-30-x-20.webp","lg":"images/lg/jpeg/2-kolaba-fort-30-x-20.webp","w":"2400","h":"1600","lat":18.634,"lon":72.864},{"title":"Murud-Janjira","group":"Raigad","sm":"images/sm/jpeg/3-murud-janjira-30-x-20.webp","lg":"images/lg/jpeg/3-murud-janjira-30-x-20.webp","w":"2400","h":"1600","lat":18.3,"lon":72.964},{"title":"Varsoli Beach","group":"Raigad","sm":"images/sm/jpeg/4-varsoli-30-x-20.webp","lg":"images/lg/jpeg/4-varsoli-30-x-20.webp","w":"2400","h":"1600","lat":18.659,"lon":72.866},{"title":"Kihim Beach","group":"Raigad","sm":"images/sm/jpeg/5-kihim-beach-30-x-20-opt-2.webp","lg":"images/lg/jpeg/5-kihim-beach-30-x-20-opt-2.webp","w":"2400","h":"1600","lat":18.716,"lon":72.861},{"title":"Akshi Beach","group":"Raigad","sm":"images/sm/jpeg/6-akshi-beach-30-x-20.webp","lg":"images/lg/jpeg/6-akshi-beach-30-x-20.webp","w":"2400","h":"1600","lat":18.611,"lon":72.879},{"title":"Karmarkar Sculpture Museum","group":"Raigad","sm":"images/sm/jpeg/7-karmarkar-30-x-20.webp","lg":"images/lg/jpeg/7-karmarkar-30-x-20.webp","w":"2400","h":"1600","lat":18.758,"lon":72.88},{"title":"Khanderi-Underi","group":"Raigad","sm":"images/sm/jpeg/8-khanderi-underi-30-x-20.webp","lg":"images/lg/jpeg/8-khanderi-underi-30-x-20.webp","w":"2400","h":"1600","lat":18.705,"lon":72.81},{"title":"Kashid Beach","group":"Raigad","sm":"images/sm/jpeg/9-kashid-beach-30-x-20.webp","lg":"images/lg/jpeg/9-kashid-beach-30-x-20.webp","w":"2400","h":"1600","lat":18.437,"lon":72.904},{"title":"Korlai","group":"Raigad","sm":"images/sm/jpeg/10-korlai-beach-30-x-20.webp","lg":"images/lg/jpeg/10-korlai-beach-30-x-20.webp","w":"2400","h":"1600","lat":18.527,"lon":72.917},{"title":"Revdanda","group":"Raigad","sm":"images/sm/jpeg/11-revdanda-30-x-20.webp","lg":"images/lg/jpeg/11-revdanda-30-x-20.webp","w":"2400","h":"1600","lat":18.551,"lon":72.927},{"title":"Birla Mandir, Salav","group":"Raigad","sm":"images/sm/jpeg/12-birla-mandir-30-x-20.webp","lg":"images/lg/jpeg/12-birla-mandir-30-x-20.webp","w":"2400","h":"1600","lat":18.533,"lon":72.948},{"title":"Sagargad","group":"Raigad","sm":"images/sm/jpeg/13-sagargad-30-x-20.webp","lg":"images/lg/jpeg/13-sagargad-30-x-20.webp","w":"2400","h":"1600","lat":18.618,"lon":72.938},{"title":"Phansad Sanctuary","group":"Raigad","sm":"images/sm/jpeg/14-phansad-30-x-20.webp","lg":"images/lg/jpeg/14-phansad-30-x-20.webp","w":"2400","h":"1600","lat":18.42,"lon":72.96},{"title":"Magnetic Observatory, Alibaug","group":"Raigad","sm":"images/sm/jpeg/15-magnetic-obv-30-x-20.webp","lg":"images/lg/jpeg/15-magnetic-obv-30-x-20.webp","w":"2400","h":"1600","lat":18.646,"lon":72.876},{"title":"Kondana Caves","group":"Raigad","sm":"images/sm/jpeg/16-kondana-30-x-20.webp","lg":"images/lg/jpeg/16-kondana-30-x-20.webp","w":"2400","h":"1600","lat":18.835,"lon":73.385},{"title":"Morbe Dam","group":"Raigad","sm":"images/sm/jpeg/17-morbe-dam-30-x-20.webp","lg":"images/lg/jpeg/17-morbe-dam-30-x-20.webp","w":"2400","h":"1600","lat":18.983,"lon":73.233},{"title":"Nandgaon Temple","group":"Raigad","sm":"images/sm/jpeg/18-nandgaon-temple-30-x-20.webp","lg":"images/lg/jpeg/18-nandgaon-temple-30-x-20.webp","w":"2400","h":"1600","lat":18.383,"lon":72.927},{"title":"Raigad Fort","group":"Raigad","sm":"images/sm/jpeg/19-raigad-30-x-20.webp","lg":"images/lg/jpeg/19-raigad-30-x-20.webp","w":"2400","h":"1600","lat":18.234,"lon":73.44},{"title":"Raigad Fort, ramparts","group":"Raigad","sm":"images/sm/jpeg/20-raigad-30-x-20.webp","lg":"images/lg/jpeg/20-raigad-30-x-20.webp","w":"2400","h":"1600","lat":18.231,"lon":73.444},{"title":"Varadvinayak, Mahad","group":"Raigad","sm":"images/sm/jpeg/21-mahad-ganpati-30-x-20.webp","lg":"images/lg/jpeg/21-mahad-ganpati-30-x-20.webp","w":"2400","h":"1600","lat":18.083,"lon":73.42},{"title":"Ballaleshwar, Pali","group":"Raigad","sm":"images/sm/jpeg/22-pali-ganpati-30-x-20.webp","lg":"images/lg/jpeg/22-pali-ganpati-30-x-20.webp","w":"2400","h":"1600","lat":18.542,"lon":73.219},{"title":"Matheran","group":"Raigad","sm":"images/sm/jpeg/23-matheran-30-x-20.webp","lg":"images/lg/jpeg/23-matheran-30-x-20.webp","w":"2400","h":"1600","lat":18.986,"lon":73.271},{"title":"Diveagar","group":"Raigad","sm":"images/sm/jpeg/24-diveaagar-30-x-20.webp","lg":"images/lg/jpeg/24-diveaagar-30-x-20.webp","w":"2400","h":"1600","lat":18.172,"lon":72.99},{"title":"Shrivardhan","group":"Raigad","sm":"images/sm/jpeg/25-shrivardhan-30-x-20.webp","lg":"images/lg/jpeg/25-shrivardhan-30-x-20.webp","w":"2400","h":"1600","lat":18.043,"lon":73.016},{"title":"Harihareshwar","group":"Raigad","sm":"images/sm/jpeg/26-harihareshvar-30-x-20.webp","lg":"images/lg/jpeg/26-harihareshvar-30-x-20.webp","w":"2400","h":"1600","lat":17.996,"lon":73.024},{"title":"Lingana","group":"Raigad","sm":"images/sm/jpeg/27-lingana-30-x-20.webp","lg":"images/lg/jpeg/27-lingana-30-x-20.webp","w":"2400","h":"1600","lat":18.159,"lon":73.548},{"title":"Mandwa","group":"Raigad","sm":"images/sm/jpeg/28-mandava-30-x-20.webp","lg":"images/lg/jpeg/28-mandava-30-x-20.webp","w":"2400","h":"1600","lat":18.806,"lon":72.882},{"title":"Tamhini Ghat","group":"Raigad","sm":"images/sm/jpeg/29-tamhini-ghat-30-x-20.webp","lg":"images/lg/jpeg/29-tamhini-ghat-30-x-20.webp","w":"2400","h":"1600","lat":18.454,"lon":73.418},{"title":"Sarasgad","group":"Raigad","sm":"images/sm/jpeg/30-sarasgad-30-x-20.webp","lg":"images/lg/jpeg/30-sarasgad-30-x-20.webp","w":"2400","h":"1600","lat":18.553,"lon":73.236}]};</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="assets/gallery.js"></script>
+</body>
+</html>
