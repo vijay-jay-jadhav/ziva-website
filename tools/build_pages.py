@@ -371,3 +371,24 @@ as_body = f'''<div class="wrap">
     'Paint, clay and stone. Ultra-premium paintings and sculpture made with archival materials and museum-level craft, to outlive the people who commission them.',
     'Made to last 500 years.', as_body, {'items': []}, cta='Commission a piece'), encoding='utf-8')
 print('design-lab, arts-studio done')
+
+# ---------------- Social preview tags (WhatsApp, Facebook, LinkedIn, X) on every page ----------------
+SITE = 'https://zivastudios.com'
+OG = f'{SITE}/assets/og-cover.jpg'
+for f in sorted(ROOT.glob('*.html')):
+    s = f.read_text(encoding='utf-8')
+    s = re.sub(r'\n?<!-- social -->.*?<!-- /social -->', '', s, flags=re.S)
+    s = re.sub(r'<meta property="og:[a-z:_]+" content="[^"]*">', '', s)
+    title = re.search(r'<title>(.*?)</title>', s).group(1)
+    m = re.search(r'<meta name="description" content="([^"]*)">', s); desc = m.group(1) if m else ''
+    url = SITE + '/' + ('' if f.name == 'index.html' else f.name)
+    block = (f'\n<!-- social --><link rel="canonical" href="{url}">'
+             f'<meta property="og:type" content="website"><meta property="og:site_name" content="Ziva Studios">'
+             f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">'
+             f'<meta property="og:url" content="{url}"><meta property="og:image" content="{OG}">'
+             f'<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'
+             f'<meta property="og:image:alt" content="Ziva Studios: We paint walls, shoot films and shape brands.">'
+             f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{OG}"><!-- /social -->')
+    s = s.replace('</head>', block + '\n</head>', 1)
+    f.write_text(s, encoding='utf-8')
+print('social tags added')
