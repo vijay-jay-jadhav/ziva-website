@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=3cc70520">
+<link rel="stylesheet" href="assets/site.css?v=a3c30288">
+
 
 
 
@@ -81,19 +82,8 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
         <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M14 30c-4-4-6-9-4-12 1.5-2 4-1 5 1l-4-8c-1-2 2-4 3.5-2l5 8-6-11c-1-2 2-3.5 3.5-1.5l6 10-4-8c-1-2 2-3.5 3.3-1.5l5 9c2 4 2 9-1 13-4 5-11 6-16 2z"/><path d="M6 8c-2 2-3 4-3 6M9 4c-2 1-3 2-4 3"/></svg>
         Namaskar! You found the studio.
       </p>
-      <h1>We <span class="mark m-paint">paint</span> walls, shoot <span class="mark m-film draw">films<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 8c12-5 22 3 34-1s20-4 30 0 20 2 32-3"/></svg></span> and shape <span class="mark m-brand draw">brands.<svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M88 6C60-1 14 4 6 26c-6 18 30 30 64 28 30-2 50-14 46-30-3-12-24-18-50-17"/></svg></span></h1>
+      <h1>We <span class="mark m-paint">paint</span> walls,<br>shoot <span class="mark m-film draw">films<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 8c12-5 22 3 34-1s20-4 30 0 20 2 32-3"/></svg></span> and<br>shape <span class="mark m-brand draw">brands.<svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M88 6C60-1 14 4 6 26c-6 18 30 30 64 28 30-2 50-14 46-30-3-12-24-18-50-17"/></svg></span></h1>
       <p class="lede">Ziva Studios is a creative studio in Pune. Designers, filmmakers, painters and sculptors work at one table, so a brand film, a mural and a logo can all start from the same idea.</p>
-      <div class="painter" style="margin-top:20px">
-        <svg class="arrow" viewBox="0 0 46 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6c10 16 24 20 38 14M33 13l8 7-10 4"/></svg>
-        <span id="paintHint">The wall is still wet. Move your mouse over it.</span>
-        <div class="swatches" role="group" aria-label="Paint colour">
-          <button class="sw" data-c="--ultra" style="background:var(--ultra)" aria-label="Ultramarine" aria-pressed="true"></button>
-          <button class="sw" data-c="--rose" style="background:var(--rose)" aria-label="Rose" aria-pressed="false"></button>
-          <button class="sw" data-c="--cad" style="background:var(--cad)" aria-label="Cadmium yellow" aria-pressed="false"></button>
-          <button class="sw" data-c="--sap" style="background:var(--sap)" aria-label="Sap green" aria-pressed="false"></button>
-          <button class="wipe" id="wipe">Wipe</button>
-        </div>
-      </div>
       <div class="hero-ctas">
         <a class="btn" href="#work">See the work</a>
         <a class="btn ghost" href="#contact">Start a project</a>
@@ -111,6 +101,20 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
       <figure class="polaroid p3"><span class="tape"></span>
         <div class="ph"><img src="images/sm/sculptures/img-9316.webp" alt="Bronze bust" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;object-position:50% 25%"></div>
         <figcaption>sculpture</figcaption></figure>
+      <div class="invite">
+        <p class="invite-t">This wall is yours.<span>Paint your dream canvas.</span></p>
+      <div class="painter">
+        <svg class="arrow" viewBox="0 0 46 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6c10 16 24 20 38 14M33 13l8 7-10 4"/></svg>
+        <span id="paintHint">Move your mouse to paint.</span>
+        <div class="swatches" role="group" aria-label="Paint colour">
+          <button class="sw" data-c="--ultra" style="background:var(--ultra)" aria-label="Ultramarine" aria-pressed="true"></button>
+          <button class="sw" data-c="--rose" style="background:var(--rose)" aria-label="Rose" aria-pressed="false"></button>
+          <button class="sw" data-c="--cad" style="background:var(--cad)" aria-label="Cadmium yellow" aria-pressed="false"></button>
+          <button class="sw" data-c="--sap" style="background:var(--sap)" aria-label="Sap green" aria-pressed="false"></button>
+          <button class="wipe" id="wipe">Wipe</button>
+        </div>
+      </div>
+      </div>
       <div class="badge" aria-hidden="true">
         <svg viewBox="0 0 132 132"><defs><path id="circ" d="M66 66m-54 0a54 54 0 1 1 108 0a54 54 0 1 1-108 0"/></defs><text><textPath href="#circ">Design Lab ✶ Filmmaking ✶ Arts Studio ✶ </textPath></text></svg>
         <div class="core">made in<br>Pune</div>
@@ -470,9 +474,9 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
   function specs(){
     var wide=W>900;
     return wide?[
-      {c:[.56,.10,.72,.02,.90,.18,1.02,.42],w:.15,col:'--ultra',seed:11},
-      {c:[.60,.80,.72,.70,.86,.78,1.00,.66],w:.10,col:'--cad',seed:23},
-      {c:[.84,.96,.90,.86,.96,.92,1.02,.80],w:.07,col:'--rose',seed:37},
+      {c:[.74,.02,.84,-.02,.95,.08,1.02,.30],w:.08,col:'--ultra',seed:11},
+      {c:[.80,.99,.87,.93,.95,.97,1.02,.88],w:.06,col:'--cad',seed:23},
+      {c:[.975,.50,.99,.57,1.0,.63,1.02,.70],w:.045,col:'--rose',seed:37},
       {c:[-.02,1.0,.05,.965,.12,.995,.19,.965],w:.04,col:'--sap',seed:41}
     ]:[
       {c:[.70,.004,.80,-.004,.92,.012,1.04,.004],w:.07,col:'--ultra',seed:11},
@@ -532,12 +536,12 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
     var sc=width/30;
     liveBr.forEach(function(br){ctx.globalAlpha=br.a*.85;ctx.lineWidth=br.w;var o=br.o*sc;
       ctx.beginPath();ctx.moveTo(last[0]+nx*o,last[1]+ny*o);ctx.lineTo(x+nx*o,y+ny*o);ctx.stroke()});
-    ctx.globalAlpha=1;last=[x,y];
+    ctx.globalAlpha=1;last=[x,y];hero.classList.add('painted');
   }
   function splat(x,y){
     ctx.fillStyle=col(colorVar);var r=rnd(Math.floor(x*31+y*17)+3);
     for(var i=0;i<18;i++){var a=r()*Math.PI*2,d=r()*26,s=2+r()*9;ctx.globalAlpha=.5+r()*.5;ctx.beginPath();ctx.arc(x+Math.cos(a)*d,y+Math.sin(a)*d,s,0,7);ctx.fill()}
-    ctx.globalAlpha=1;
+    ctx.globalAlpha=1;hero.classList.add('painted');
   }
   var interactive='a,button,input,textarea,.swatches,.polaroid,.badge';
   var lt=0;
@@ -556,13 +560,13 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
   hero.addEventListener('pointerdown',function(e){
     if(e.pointerType!=='mouse'&&!e.target.closest(interactive)){var r=cv.getBoundingClientRect();splat(e.clientX-r.left,e.clientY-r.top)}
   });
-  if(!matchMedia('(hover:hover)').matches){document.getElementById('paintHint').textContent='The wall is still wet. Tap it to flick some paint.'}
+  if(!matchMedia('(hover:hover)').matches){document.getElementById('paintHint').textContent='Tap anywhere to splash some paint.'}
 
   document.querySelectorAll('.sw').forEach(function(b){b.addEventListener('click',function(){
     document.querySelectorAll('.sw').forEach(function(x){x.setAttribute('aria-pressed','false')});
     b.setAttribute('aria-pressed','true');colorVar=b.dataset.c;brushEl.style.setProperty('--bc','var('+colorVar+')');newBrush(30);
   })});
-  document.getElementById('wipe').addEventListener('click',function(){ctx.clearRect(0,0,W,H);strokes.forEach(function(s){s.done=0});intro()});
+  document.getElementById('wipe').addEventListener('click',function(){hero.classList.remove('painted');ctx.clearRect(0,0,W,H);strokes.forEach(function(s){s.done=0});intro()});
 })();
 </script>
 
