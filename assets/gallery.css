@@ -178,7 +178,7 @@
 .photo-link img{width:100%;aspect-ratio:3/2;object-fit:cover}
 .photo-link b{display:block;font-family:var(--f-display);font-weight:400;font-size:var(--s-h3);margin-top:4px}
 .photo-link .mono{color:var(--ink-soft)}
-.crew{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important}
+.crew{grid-template-columns:repeat(auto-fill,minmax(170px,190px))!important}
 .vm .vbox{position:relative;width:min(92vw,1100px);aspect-ratio:16/9;margin:auto;align-self:center}
 .vm .vbox.tall{width:min(92vw,calc(78vh*9/16));aspect-ratio:9/16}
 .vm{place-items:center;grid-template-rows:1fr}
