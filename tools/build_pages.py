@@ -439,7 +439,7 @@ ab_body = f'''<div class="wrap">
   </div>
   <div class="section-label"><h2>The people at the table</h2><span class="hand">Pull up a chair</span></div>
   <div class="round">
-    <div class="table-top" aria-hidden="true"><span class="cup c1"></span><span class="cup c2"></span><span class="cup c3"></span><span class="sketch">pull up a chair.<br>chai or coffee?</span></div>
+    <div class="table-top" aria-hidden="true"><span class="cup c1"></span><span class="cup c2"></span><span class="cup c3"></span><span class="sketch">every idea starts<br>with a sip,<br>chai or coffee</span></div>
     {seats}
   </div>
 </div>'''
