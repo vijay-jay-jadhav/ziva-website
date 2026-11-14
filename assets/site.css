@@ -413,3 +413,15 @@ footer .wrap,.contact .wrap{color:inherit}
 [data-theme=dark] .tag:not(.you){background:#ECEAE4}[data-theme=dark] .tag .nm{color:#17181A}[data-theme=dark] .tag .rl{color:#55565A}
 .seat .ph{margin:8px 22px 0}
 .team .tag .nm{font-size:1.15rem}.team .tag .rl{font-size:.76rem;padding:0 10px 12px}.team .tag .ph{margin:8px 8px 0}
+/* process: picture sticks, steps scroll past and drive it */
+.feature{align-items:start}
+.feature .big{position:sticky;top:96px;z-index:2}
+#featured .steps li{min-height:42vh;align-content:center;opacity:.25;transform:translateY(24px);transition:opacity .5s,transform .5s}
+#featured .steps li.seen{transform:none;opacity:.5}
+#featured .steps li.on{opacity:1}
+#featured .facts{margin-bottom:20vh}
+@media (max-width:900px){
+  .feature .big{top:66px;max-width:300px;margin:0 auto;width:72%;padding:8px 8px 0}
+  .feature .big figcaption{display:none}.feature .big .ph{margin-bottom:8px}
+  #featured .steps li{min-height:34vh;background:var(--paper)}
+}

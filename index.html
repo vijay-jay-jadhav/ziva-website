@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=7b7d5a7b">
+<link rel="stylesheet" href="assets/site.css?v=aed13df5">
+
 
 
 
@@ -242,8 +243,8 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
       <figcaption><div class="stage-tabs" id="stageTabs"><button type="button" data-n="1">Sketch</button><button type="button" data-n="2">Measure</button><button type="button" data-n="3">Paint</button><button type="button" data-n="4">Finish</button></div><button class="replay" id="replay" type="button">▶ Play</button></figcaption>
     </figure>
     <div>
-      <span class="eyebrow mono">Our process</span>
-      <h2>From your idea to your wall</h2>
+      <span class="eyebrow mono">Featured work</span>
+      <h2>How we do murals</h2>
       <p class="intro">You don’t need a design ready. Bring a feeling, a photo or a story, and we’ll take it all the way to a finished wall.</p>
       <ol class="steps" id="steps">
         <li><div><b>We sketch it with you</b><span>Over chai or coffee, we turn your idea into a drawing. You see it and approve it before any paint is opened.</span></div></li>
@@ -450,12 +451,14 @@ if(ok){document.getElementById('intro').hidden=false;document.documentElement.cl
       tl.classList.toggle('sealed',n===4&&!!anim&&!reduce);
     }
     function stop(){T.forEach(clearTimeout);T=[]}
-    function play(){stop();[1,2,3,4].forEach(function(n,i){T.push(setTimeout(function(){stage(n,true)},i*2600))})}
+    function play(){stop();[1,2,3,4].forEach(function(n,i){T.push(setTimeout(function(){stage(n,true)},i*2600))});T.push(setTimeout(function(){T=[]},4*2600))}
     tabs.forEach(function(b){b.addEventListener('click',function(){stop();stage(+b.dataset.n,true)})});
     lis.forEach(function(li,i){li.addEventListener('click',function(){stop();stage(i+1,true)})});
     document.getElementById('replay').addEventListener('click',play);
-    stage(4);
-    if(!reduce&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play();io.disconnect()}})},{threshold:.45});io.observe(tl)}
+    stage(1);
+    tabs.forEach(function(b,i){b.addEventListener('click',function(){lis[i].scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})})});
+    if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=[].indexOf.call(lis,e.target);e.target.classList.add('seen');if(!T.length&&i+1!==cur)stage(i+1,true)}})},{rootMargin:innerWidth<=900?'-66% 0px -22% 0px':'-45% 0px -45% 0px'});lis.forEach(function(li){so.observe(li)})}
+    else stage(4);
   })();
 
   // ---------- form ----------
