@@ -218,7 +218,7 @@
 .atile i{font-style:normal;white-space:nowrap}
 @media (max-width:760px){.atiles{grid-template-columns:1fr}.atile,.atile:nth-child(1),.atile:nth-child(2){grid-column:auto;aspect-ratio:16/11}}
 .vision{margin:clamp(64px,9vw,120px) auto 0;max-width:880px;text-align:center}
-.vision p{font-family:var(--f-display);font-size:clamp(1.8rem,3.6vw,3rem);line-height:1.15}
+.vision p{font-family:var(--f-display);font-size:clamp(1.35rem,3.2vw,2.6rem);line-height:1.2;text-wrap:balance}
 .vision .cite{margin-top:18px;color:var(--ink-soft)}
 .ethos{display:flex;justify-content:center;margin-top:36px}
 .ethos div{max-width:60ch;text-align:center;color:var(--ink-soft)}
