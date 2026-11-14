@@ -508,7 +508,7 @@ for f in sorted(ROOT.glob('*.html')):
              f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">'
              f'<meta property="og:url" content="{url}"><meta property="og:image" content="{OG}">'
              f'<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'
-             f'<meta property="og:image:alt" content="Ziva Studios: We paint walls, shoot films and shape brands.">'
+             f'<meta property="og:image:alt" content="Ziva Studios: Tell us your idea. We’ll paint it, film it and design it to last.">'
              f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{OG}"><!-- /social -->')
     s = s.replace('</head>', block + '\n</head>', 1)
     f.write_text(s, encoding='utf-8')
