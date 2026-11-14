@@ -395,6 +395,11 @@ footer .wrap,.contact .wrap{color:inherit}
   .invite-t{padding:0 16px}
 }
 @media (max-width:480px){.hero h1{font-size:2.15rem}}
-.tag .ph{width:58%;aspect-ratio:1/1;margin:16px auto 0;border:3px solid var(--c);border-radius:10px;background:color-mix(in srgb,var(--c) 18%,var(--sheet));overflow:hidden;display:grid;place-items:center}
+.tag .ph{aspect-ratio:1/1;margin:10px 10px 0;background:color-mix(in srgb,var(--c) 18%,var(--sheet));overflow:hidden;display:grid;place-items:center}
 .tag .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .tag .ph.empty svg{width:52%;fill:var(--c);opacity:.35}
+.tag:not(.you){background:#fff;border-radius:3px;overflow:visible}.tag:not(.seat){position:relative}
+.tag:not(.you)::before{content:"";position:absolute;top:-9px;left:50%;width:42%;height:20px;background:color-mix(in srgb,var(--c) 45%,transparent);transform:translateX(-50%) rotate(-3deg);z-index:1}
+.tag .ph+.nm{padding-top:12px}
+[data-theme=dark] .tag:not(.you){background:#ECEAE4}[data-theme=dark] .tag .nm{color:#17181A}[data-theme=dark] .tag .rl{color:#55565A}
+.seat .ph{margin:8px 22px 0}

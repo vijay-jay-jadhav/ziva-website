@@ -401,7 +401,7 @@ for i, row in enumerate(TEAM + [(None,) * 4]):
     a = -math.pi / 2 + 2 * math.pi * i / n
     pos = f'style="--x:{50 + 41 * math.cos(a):.2f}%;--y:{50 + 41 * math.sin(a):.2f}%;--r:{(i % 3 - 1) * 4}deg"'
     seats += (f'<a class="seat tag you" href="contact.html" {pos}><div class="nm">Your seat?</div><p class="rl">We like meeting artists, editors and makers.</p></a>' if nm is None else
-              f'<div class="seat tag" {pos} style2><header style="background:var({c});color:{fg}"><b>HELLO</b><small>my name is</small></header><div class="nm">{nm}</div><p class="rl">{rl}</p></div>'.replace(' style2', ''))
+              f'<div class="seat tag" {pos[:-1]};--c:var({c})"><header style="background:var({c});color:{fg}"><b>HELLO</b><small>my name is</small></header><div class="nm">{nm}</div><p class="rl">{rl}</p></div>')
 st = [pick('paintings-process', '174509'), pick('sculptures', '7135a56b'), pick('murals', 'img-6520')]
 ab_body = f'''<div class="wrap">
   <div class="story">
