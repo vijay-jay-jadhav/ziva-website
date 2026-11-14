@@ -535,3 +535,14 @@ for f in sorted(ROOT.glob('*.html')):
     s2 = PH_IMG.sub(_ph, PH_RE.sub(_ph, s))
     if s2 != s: f.write_text(s2, encoding='utf-8')
 print('team photos done')
+
+# ---------------- Clean URLs: link to /about, not about.html (.htaccess serves the file) ----------------
+PAGE_NAMES = {f.stem for f in ROOT.glob('*.html') if f.name != 'index.html'}
+def _clean(m):
+    return f'href="{m.group(1)}{m.group(2)}{m.group(3) or ""}"' if m.group(2) in PAGE_NAMES else m.group(0)
+for f in sorted(ROOT.glob('*.html')):
+    s = f.read_text(encoding='utf-8')
+    s2 = re.sub(r'href="(https://zivastudios\.com/|)([a-z0-9-]+)\.html(#[^"]*)?"', _clean, s)
+    s2 = re.sub(r'(<meta property="og:url" content="https://zivastudios\.com/[a-z0-9-]+)\.html"', r'\1"', s2)
+    if s2 != s: f.write_text(s2, encoding='utf-8')
+print('clean urls done')
