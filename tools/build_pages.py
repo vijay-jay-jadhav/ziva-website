@@ -35,24 +35,24 @@ def nav(cur):
                     for s, l, c, *_ in PAGES)
     return f'''<header class="nav">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="Ziva studio space, home"><img class="lg-l" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></a>
+    <a class="logo" href="./" aria-label="Ziva studio space, home"><img class="lg-l" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></a>
     <button class="theme-btn" id="themeBtn" aria-label="Switch light or dark mode" title="Light / dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
     <button class="btn ghost menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
     <ul class="links" id="links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="./">Home</a></li>
       <li class="dd"><button aria-haspopup="true">Work ▾</button><div class="dd-menu">{items}</div></li>
       <li class="dd"><button aria-haspopup="true">Divisions ▾</button><div class="dd-menu"><a href="design-lab.html"><span class="dot" style="background:var(--ultra)"></span>Design Lab</a><a href="filmmaking.html"><span class="dot" style="background:var(--rose)"></span>Filmmaking</a><a href="arts-studio.html"><span class="dot" style="background:var(--cad)"></span>Arts Studio</a></div></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a class="btn cta" href="index.html#contact">Start a project</a>
+    <a class="btn cta" href="contact.html">Start a project</a>
   </div>
 </header>'''
 
 FOOT = '''<footer>
   <div class="wrap">
     <div class="foot-top">
-      <nav aria-label="Footer"><a href="index.html">Home</a><a href="design-lab.html">Design Lab</a><a href="filmmaking.html">Filmmaking</a><a href="arts-studio.html">Arts Studio</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="index.html#contact">Contact</a></nav>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="design-lab.html">Design Lab</a><a href="filmmaking.html">Filmmaking</a><a href="arts-studio.html">Arts Studio</a><a href="paintings.html">Paintings</a><a href="sculptures.html">Sculptures</a><a href="murals.html">Murals</a><a href="miniature-statues.html">Miniatures</a><a href="miniature-models.html">Models</a><a href="photography.html">Photography</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
       <span class="hand" style="font-size:1.1rem;color:#C9CBCF">Made by hand in Pune</span>
     </div>
     <span class="foot-plate"><img class="foot-logo" src="assets/logo/ziva-logo.png" alt="Ziva studio space"></span>
@@ -141,7 +141,7 @@ for slug, label, col, eyebrow, h1, lede, note, layout in PAGES:
 <section class="cta-band">
   <div class="wrap">
     <div><h2>Want one of these?</h2><div class="other-pages">{others}</div></div>
-    <a class="btn" href="index.html#contact">Start a project</a>
+    <a class="btn" href="contact.html">Start a project</a>
   </div>
 </section>
 </main>
@@ -236,7 +236,7 @@ fp = fp.replace('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" c
 hero = '''<section class="page-hero">
   <div class="wrap">
     <div>
-      <p class="crumbs mono"><a href="index.html#divisions">Divisions</a><span>/</span><span>Filmmaking</span></p>
+      <p class="crumbs mono"><a href="./#divisions">Divisions</a><span>/</span><span>Filmmaking</span></p>
       <h1><span class="mark m-paint" style="--cad:var(--rose)">Filmmaking</span></h1>
       <p class="lede">Ads, short films and songs, from script to drone shot to final grade. Most of what we shoot also lives on our own channel.</p>
     </div>
@@ -256,7 +256,14 @@ print('filmmaking', len(fp))
 # ---------------- Design Lab and Arts Studio division pages ----------------
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Kalam:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">')
-def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Start a project'):
+def band_html(cta):
+    return f'''<section class="cta-band">
+  <div class="wrap">
+    <div><h2>Have something in mind?</h2><div class="other-pages"><a href="design-lab.html">Design Lab</a><a href="filmmaking.html">Filmmaking</a><a href="arts-studio.html">Arts Studio</a></div></div>
+    <a class="btn" href="contact.html">{cta}</a>
+  </div>
+</section>'''
+def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Start a project', band=True, crumbroot=('Divisions', './#divisions')):
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -275,7 +282,7 @@ def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Sta
 <section class="page-hero">
   <div class="wrap">
     <div>
-      <p class="crumbs mono"><a href="index.html#divisions">Divisions</a><span>/</span><span>{e(crumb)}</span></p>
+      <p class="crumbs mono"><a href="{crumbroot[1]}">{crumbroot[0]}</a><span>/</span><span>{e(crumb)}</span></p>
       <h1><span class="mark m-paint" style="{hl}">{e(h1)}</span></h1>
       <p class="lede">{e(lede)}</p>
     </div>
@@ -283,12 +290,7 @@ def shell(slug, title, desc, og, crumb, h1, hl, lede, note, body, data, cta='Sta
   </div>
 </section>
 {body}
-<section class="cta-band">
-  <div class="wrap">
-    <div><h2>Have something in mind?</h2><div class="other-pages"><a href="design-lab.html">Design Lab</a><a href="filmmaking.html">Filmmaking</a><a href="arts-studio.html">Arts Studio</a></div></div>
-    <a class="btn" href="index.html#contact">{cta}</a>
-  </div>
-</section>
+{band_html(cta) if band else ''}
 </main>
 {FOOT}
 {LB}
@@ -372,9 +374,128 @@ as_body = f'''<div class="wrap">
     'Made to last 500 years.', as_body, {'items': []}, cta='Commission a piece'), encoding='utf-8')
 print('design-lab, arts-studio done')
 
-# ---------------- Social preview tags (WhatsApp, Facebook, LinkedIn, X) on every page ----------------
+
+
 SITE = 'https://zivastudios.com'
 OG = f'{SITE}/assets/og-cover.jpg'
+# ---------------- About page ----------------
+import math
+TEAM = [('Pradnyesh Molak', '“Saaku”. Creative director, art curation & concepts', '--rose', '#17181A'),
+        ('Manoj Janwekar', 'Editor, graphic designer & motion graphics', '--ultra', 'var(--on-ultra)'),
+        ('Vishal Tajnekar', 'Painter & sculptor. JJ School of Arts', '--cad', '#17181A'),
+        ('Samruddhi Kadolkar', 'Graphic designer, illustrator & visual storyteller', '--sap', '#FBFBF8'),
+        ('Vijay Jadhav', 'Data visualisation & infographics', '--ultra', 'var(--on-ultra)'),
+        ('Pankaj Lokhande', 'Director of photography & aerial drone operator', '--rose', '#17181A'),
+        ('Sonali Shende Borate', 'Content writer, editor & Marathi translation', '--cad', '#17181A'),
+        ('Meghal Kharat', 'Ideation, fiction & brainstorming', '--sap', '#FBFBF8'),
+        ('Kiran Bhosale', 'Reels & humour', '--rose', '#17181A'),
+        ('Amol Ransing', 'Operations', '--cad', '#17181A'),
+        ('Dr. Swapnil Chaudhari', 'Poet, scriptwriter & orator', '--ultra', 'var(--on-ultra)')]
+n = len(TEAM) + 1
+seats = ''
+for i, row in enumerate(TEAM + [(None,) * 4]):
+    nm, rl, c, fg = row
+    a = -math.pi / 2 + 2 * math.pi * i / n
+    pos = f'style="--x:{50 + 41 * math.cos(a):.2f}%;--y:{50 + 41 * math.sin(a):.2f}%;--r:{(i % 3 - 1) * 4}deg"'
+    seats += (f'<a class="seat tag you" href="contact.html" {pos}><div class="nm">Your seat?</div><p class="rl">We like meeting artists, editors and makers.</p></a>' if nm is None else
+              f'<div class="seat tag" {pos} style2><header style="background:var({c});color:{fg}"><b>HELLO</b><small>my name is</small></header><div class="nm">{nm}</div><p class="rl">{rl}</p></div>'.replace(' style2', ''))
+st = [pick('paintings-process', '174509'), pick('sculptures', '7135a56b'), pick('murals', 'img-6520')]
+ab_body = f'''<div class="wrap">
+  <div class="story">
+    <div class="story-pics">
+      <figure class="pol s1"><span class="tape"></span><img src="{st[0]['sm']}" alt="Painting at the easel" loading="lazy"><figcaption>at the easel</figcaption></figure>
+      <figure class="pol s2"><span class="tape"></span><img src="{st[1]['sm']}" alt="A figure in clay" loading="lazy"><figcaption>clay first</figcaption></figure>
+      <figure class="pol s3"><span class="tape"></span><img src="{st[2]['sm']}" alt="The team at the Swarajya Dhwaj wall" loading="lazy"><figcaption>the crew, on site</figcaption></figure>
+    </div>
+    <div class="story-copy">
+      <span class="mono eyebrow">How it started</span>
+      <h2>One room where art, film and design feed each other</h2>
+      <p>Ziva Studios was started in Pune by <strong>Pradnyesh Molak (Saaku)</strong>, a filmmaker and traveller who wanted one place where a painter, an editor and a designer could sit at the same table.</p>
+      <p>Today the team brings decades of practice in <strong>painting and sculpture</strong>, cinematography and drone work, motion graphics, newsroom writing in English and Marathi, and data visualisation. A brand film, a mural and a logo can all start from the same idea.</p>
+      <p>Since 2018 we have also made our own films, interviews, travel stories and poetry for our channel, <a href="https://www.youtube.com/@ZindagiVasoolOfficial" target="_blank" rel="noopener">Zindagi Vasool</a>.</p>
+    </div>
+  </div>
+  <div class="stats-notes">
+    <div class="note-card" style="--c:var(--cad);--fgc:#17181A"><b>30+</b>years of painting &amp; sculpture practice</div>
+    <div class="note-card" style="--c:var(--rose);--fgc:#17181A"><b>40+</b>countries travelled by our creative director</div>
+    <div class="note-card" style="--c:var(--ultra);--fgc:var(--on-ultra)"><b>10+</b>years of newsroom writing behind our scripts</div>
+    <div class="note-card" style="--c:var(--sap);--fgc:#FBFBF8"><b>204</b>films on our own YouTube channel</div>
+    <div class="note-card" style="--c:var(--sheet);--fgc:var(--ink)"><b>3</b>languages: English, मराठी, हिंदी</div>
+  </div>
+  <div class="section-label"><h2>What we believe</h2><span class="hand">Three rules we keep at the table</span></div>
+  <div class="beliefs">
+    <div class="belief"><span class="num">01</span><h3>We do not mass-produce</h3><p>We curate, consult and craft. Every painting, film and identity is made for one client and one story.</p></div>
+    <div class="belief"><span class="num">02</span><h3>Made to last</h3><p>Archival oils on linen, museum glass, basalt stone. Our art is built to outlive the people who commission it.</p></div>
+    <div class="belief"><span class="num">03</span><h3>One table, many hands</h3><p>The painter sketches the storyboard, the filmmaker shoots the mural, the designer reads the data. Ideas cross rooms.</p></div>
+  </div>
+  <div class="section-label"><h2>Three rooms</h2><span class="hand">Walk into any of them</span></div>
+  <div class="rooms">
+    <a class="room" href="design-lab.html" style="--c:var(--ultra);--fgc:var(--on-ultra)"><b>Design Lab</b><span>Identity, graphics, data and maps</span><i>Visit the lab →</i></a>
+    <a class="room" href="filmmaking.html" style="--c:var(--rose);--fgc:#17181A"><b>Filmmaking</b><span>Ads, short films, songs and drone work</span><i>Watch the reel →</i></a>
+    <a class="room" href="arts-studio.html" style="--c:var(--cad);--fgc:#17181A"><b>Arts Studio</b><span>Paintings, sculpture, murals and miniatures</span><i>Enter the studio →</i></a>
+  </div>
+  <div class="section-label"><h2>The people at the table</h2><span class="hand">Pull up a chair</span></div>
+  <div class="round">
+    <div class="table-top" aria-hidden="true"><span class="cup c1"></span><span class="cup c2"></span><span class="cup c3"></span><span class="sketch">ideas start<br>here, over chai</span></div>
+    {seats}
+  </div>
+</div>'''
+(ROOT / 'about.html').write_text(shell('about', 'About', 'Ziva Studios is a creative studio in Pune where painters, filmmakers, designers and writers work at one table.',
+    OG, 'About', 'About us', '', 'Painters, filmmakers, designers and writers who like working in the same room. Based in Pune, working in English, Marathi and Hindi.',
+    'Pull up a chair. The chai is on us.', ab_body, {'items': []}, crumbroot=('Studio', './')), encoding='utf-8')
+
+# ---------------- Contact page ----------------
+co_body = '''<div class="wrap">
+  <form class="postcard" id="pcForm" novalidate>
+    <div class="pc-msg">
+      <span class="mono pc-label">Dear Ziva,</span>
+      <fieldset class="chips"><legend class="legend">We'd like to make</legend>
+        <label style="--c:var(--ultra);--fgc:var(--on-ultra)"><input type="checkbox" name="kind" value="Design"><span>Design</span></label>
+        <label style="--c:var(--rose);--fgc:#17181A"><input type="checkbox" name="kind" value="Film"><span>A film</span></label>
+        <label style="--c:var(--cad);--fgc:#17181A"><input type="checkbox" name="kind" value="Painting or mural"><span>A painting or mural</span></label>
+        <label style="--c:var(--sap);--fgc:#FBFBF8"><input type="checkbox" name="kind" value="Sculpture or miniature"><span>A sculpture or miniature</span></label>
+      </fieldset>
+      <label class="pc-field"><span class="legend">Tell us a little</span><textarea name="msg" rows="6" placeholder="Where is it, roughly how big, and when do you need it?"></textarea></label>
+    </div>
+    <div class="pc-addr">
+      <div class="stamp" aria-hidden="true"><img src="assets/logo/favicon-32.png" alt=""><span>ZIVA · PUNE</span></div>
+      <div class="postmark" aria-hidden="true"><span>PUNE</span><b>2026</b><span>MAHARASHTRA</span></div>
+      <label class="pc-line"><span class="legend">From</span><input name="name" autocomplete="name" placeholder="Your name" required></label>
+      <label class="pc-line"><span class="legend">Email</span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label class="pc-line"><span class="legend">Phone (optional)</span><input name="phone" type="tel" autocomplete="tel" placeholder="+91"></label>
+      <div class="pc-to"><span class="legend">To</span><p>Ziva Studios<br>Pune, Maharashtra, India</p></div>
+      <button class="btn" type="submit">Post it ✉</button>
+      <p class="pc-sent" id="pcSent" aria-live="polite"></p>
+    </div>
+  </form>
+  <div class="section-label"><h2>What happens next</h2><span class="hand">No forms, no follow-up spam</span></div>
+  <ol class="next">
+    <li><b>We write back</b><span>Someone from the studio reads every note and replies personally.</span></li>
+    <li><b>Chai &amp; scribbles</b><span>We meet, listen, and shape the idea together over a few rounds of sketches.</span></li>
+    <li><b>Sketch &amp; quote</b><span>You get drawings, materials and a clear quotation. Work starts only when you say yes.</span></li>
+  </ol>
+  <div class="section-label"><h2>Other ways to find us</h2></div>
+  <div class="reach">
+    <div class="reach-card" style="--c:var(--cad)"><span class="mono">Studio</span><b>Pune, Maharashtra</b><span>Add the studio address here</span></div>
+    <div class="reach-card" style="--c:var(--ultra)"><span class="mono">Email &amp; phone</span><b>Add email here</b><span>Add phone number here</span></div>
+    <a class="reach-card" style="--c:var(--rose)" href="https://www.youtube.com/@ZindagiVasoolOfficial" target="_blank" rel="noopener"><span class="mono">YouTube</span><b>Zindagi Vasool</b><span>12.4K subscribers · 204 videos →</span></a>
+    <div class="reach-card" style="--c:var(--sap)"><span class="mono">We speak</span><b>English, मराठी, हिंदी</b><span>Write in whichever you like</span></div>
+  </div>
+</div>
+<script>
+document.getElementById('pcForm').addEventListener('submit',function(e){
+  e.preventDefault();var f=e.target,n=f.name.value.trim();
+  if(!n||!f.email.value.trim()){document.getElementById('pcSent').textContent='Please add your name and email so we can write back.';return}
+  f.classList.add('posted');
+  document.getElementById('pcSent').textContent='Thanks, '+n+'. This form is a preview and is not connected to an inbox yet.';
+});
+</script>'''
+(ROOT / 'contact.html').write_text(shell('contact', 'Contact', 'Start a project with Ziva Studios, Pune: design, films, paintings, murals, sculpture and miniatures.',
+    OG, 'Contact', 'Write to us', '--cad:var(--rose)', 'Tell us about your wall, your film or your brand. A few lines are enough to start.',
+    'Every project here started with a short note.', co_body, {'items': []}, band=False, crumbroot=('Studio', './')), encoding='utf-8')
+print('about, contact done')
+
+# ---------------- Social preview tags (WhatsApp, Facebook, LinkedIn, X) on every page ----------------
 for f in sorted(ROOT.glob('*.html')):
     s = f.read_text(encoding='utf-8')
     s = re.sub(r'\n?<!-- social -->.*?<!-- /social -->', '', s, flags=re.S)

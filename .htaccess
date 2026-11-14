@@ -1,0 +1,5 @@
+# Show the home page at the plain address, never /index.html
+DirectoryIndex index.html
+RewriteEngine On
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]

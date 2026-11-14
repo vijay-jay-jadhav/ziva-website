@@ -114,7 +114,7 @@
   if (layout === 'shelf') {
     G.innerHTML = items.map(function (x, i) {
       return '<article class="product">' + fig(x, i, '', '', '(max-width:600px) 92vw, 300px') + '<div class="info"><h3>' + esc(x.title) +
-        '</h3><a class="ask" href="index.html#contact">Enquire</a></div></article>';
+        '</h3><a class="ask" href="./#contact">Enquire</a></div></article>';
     }).join('');
   }
 
