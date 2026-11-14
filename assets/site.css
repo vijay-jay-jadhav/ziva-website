@@ -309,16 +309,24 @@ footer .wrap,.contact .wrap{color:inherit}
 .polaroid{transform-origin:0 0}
 .board.flying .polaroid{pointer-events:none;animation:none}
 /* featured timelapse */
-.tl .st{transition:opacity .7s ease}
+.tl .st{transition:opacity .8s ease}
 .tl .draw-p{stroke-dasharray:1;stroke-dashoffset:0}
-.tl.run .draw-p{transition:stroke-dashoffset 1.3s ease-out}
-.steps li{transition:opacity .4s}
-.steps.playing li{opacity:.4}
-.steps.playing li.on{opacity:1}
+.tl.run .draw-p{transition:stroke-dashoffset 1.6s ease-out}
+.tl .gloss{opacity:0}
+.tl.sealed .gloss{animation:gloss 1.6s .7s ease-in-out}
+@keyframes gloss{0%{opacity:1;transform:skewX(-18deg) translateX(0)}100%{opacity:1;transform:skewX(-18deg) translateX(900px)}}
+.steps li{transition:opacity .3s;cursor:pointer}
+.steps li:not(.on){opacity:.55}.steps li:hover{opacity:1}
 .steps li.on::before{background:var(--cad);color:var(--on-cad);border-color:var(--cad)}
-.replay{font:500 .72rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:none;border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px;color:var(--ink);cursor:pointer}
+.feature .big figcaption{align-items:center}
+.stage-tabs{display:flex;gap:6px;flex-wrap:wrap;counter-reset:t}
+.stage-tabs button{font:600 .78rem var(--f-body);border:1.5px solid var(--line);background:none;color:var(--ink-soft);border-radius:999px;padding:5px 11px 5px 7px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.stage-tabs button::before{counter-increment:t;content:counter(t);width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--line);color:var(--ink);font-size:.7rem}
+.stage-tabs button.done::before{background:var(--ink);color:var(--paper)}
+.stage-tabs button.on{border-color:var(--cad);color:var(--ink);background:color-mix(in srgb,var(--cad) 22%,transparent)}
+.stage-tabs button.on::before{background:var(--cad);color:var(--on-cad)}
+.replay{font:500 .72rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:none;border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;color:var(--ink);cursor:pointer}
 .replay:hover{background:var(--cad);color:var(--on-cad);border-color:var(--cad)}
-.stage-label{font-family:var(--f-hand);font-size:1.15rem}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
