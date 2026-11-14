@@ -516,3 +516,22 @@ for f in sorted(ROOT.glob('*.html')):
     s = s.replace('</head>', block + '\n</head>', 1)
     f.write_text(s, encoding='utf-8')
 print('social tags added')
+
+# ---------------- Team photos on name tags (drop images/team/<first-last>.webp to fill one) ----------------
+SIL = ('<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="11"/>'
+       '<path d="M10 60c2-13 11-20 22-20s20 7 22 20z"/></svg>')
+def _ph(m):
+    c, name = m.group(1), m.group(2)
+    slug = re.sub(r'[^a-z]+', '-', name.lower()).strip('-')
+    st = f' style="--c:var({c})"' if c else ''
+    if (ROOT / 'images/team' / f'{slug}.webp').exists():
+        inner = f'<img src="images/team/{slug}.webp" alt="{name}" loading="lazy" width="640" height="800">'
+        return f'<figure class="ph"{st}>{inner}</figure><div class="nm">{name}</div>'
+    return f'<figure class="ph empty"{st}>{SIL}</figure><div class="nm">{name}</div>'
+PH_RE = re.compile(r'<header(?: style="background:var\((--[a-z]+)\);color:[^"]*")?><b>HELLO</b><small>my name is</small></header><div class="nm">([^<]+)</div>')
+PH_IMG = re.compile(r'<figure class="ph[^"]*"(?: style="--c:var\((--[a-z]+)\)")?>.*?</figure><div class="nm">([^<]+)</div>', re.S)
+for f in sorted(ROOT.glob('*.html')):
+    s = f.read_text(encoding='utf-8')
+    s2 = PH_IMG.sub(_ph, PH_RE.sub(_ph, s))
+    if s2 != s: f.write_text(s2, encoding='utf-8')
+print('team photos done')
